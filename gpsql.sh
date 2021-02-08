@@ -1883,6 +1883,7 @@ EOF
 			echo -e "database di uno specifico schema"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
+			clear
 			echo ""
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""

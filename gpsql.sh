@@ -68,7 +68,7 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -121,7 +121,7 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -168,7 +168,7 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -209,7 +209,7 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -251,7 +251,7 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -287,7 +287,7 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -322,7 +322,7 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -357,7 +357,7 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
 		read -s
 		if [[ $REPLY ]]; then
 			PASSWORD=$REPLY
@@ -392,7 +392,7 @@ function variabili_HOST,PORT,USER,PASSWORD {
 		fi
 		echo $USER
 
-		echo -e "Imposta PASSWORD : "
+		echo -E "Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY

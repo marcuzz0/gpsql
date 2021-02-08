@@ -69,36 +69,38 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
 		echo $USER
 
 		echo -E "Imposta PASSWORD : "
-    read -s
-    if [[ $REPLY ]]; then
-      PASSWORD=$REPLY
-    fi
+		read -s
+		if [[ $REPLY ]]; then
+			PASSWORD=$REPLY
+		fi
 		echo ""
 
-        read -p "Imposta EPSG di partenza (default $EPSG1): "
+    read -p "Imposta EPSG di partenza (default $EPSG1): "
 		if [[ $REPLY ]]; then
 			EPSG1=$REPLY
 		fi
 		echo $EPSG1
 
-        read -p "Imposta EPSG di destinazione (default $EPSG2): "
+    read -p "Imposta EPSG di destinazione (default $EPSG2): "
 		if [[ $REPLY ]]; then
 			EPSG2=$REPLY
 		fi
 		echo $EPSG2
 
-        read -p "Imposta il path e nome del file (default $PATH_FILE): "
+    read -p "Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
 		echo $PATH_FILE
 
-        read -p "Imposta il nome della tabella di destinazione (default $NEW_TABLE): "
+    read -p "Imposta il nome della tabella di destinazione (default $NEW_TABLE): "
 		if [[ $REPLY ]]; then
 			NEW_TABLE=$REPLY
 		fi
 		echo $NEW_TABLE
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
 
 		# echo `date`
@@ -145,7 +147,9 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
 			PATH_FILE=$REPLY
 		fi
 		echo $PATH_FILE
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA {
 
 		# echo `date`
@@ -186,7 +190,9 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA {
 			SCHEMA=$REPLY
 		fi
 		echo $SCHEMA
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 
 		# echo `date`
@@ -229,6 +235,7 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 		fi
 		echo $PATH_FILE
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 
 		# echo `date`
@@ -264,7 +271,9 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 			PATH_DIR=$REPLY
 		fi
 		echo $PATH_DIR
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 
 		# echo `date`
@@ -299,7 +308,9 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 			PATH_FILE=$REPLY
 		fi
 		echo $PATH_FILE
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 
 		# echo `date`
@@ -334,7 +345,9 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 			PATH_DUMP=$REPLY
 		fi
 		echo $PATH_DUMP
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 
 		# echo `date`
@@ -369,7 +382,9 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 			PATH_RESTORE=$REPLY
 		fi
 		echo $PATH_RESTORE
+
 }
+
 function variabili_HOST,PORT,USER,PASSWORD {
 
 		# echo `date`
@@ -392,12 +407,13 @@ function variabili_HOST,PORT,USER,PASSWORD {
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+    echo -E "Imposta PASSWORD: "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
 		echo ""
+		
 }
 
 #########################################################################################

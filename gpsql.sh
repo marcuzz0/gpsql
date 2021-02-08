@@ -1782,7 +1782,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_USER"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}concedendo ${txtverde}$PRIVILEGI ${normale}sulle tabelle a ${txtverde}$NEW_USER"
 					echo ""
-					echo -e "${normale}Procedo?"
+					echo -e "${normale}Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_USER;
@@ -1839,7 +1839,7 @@ EOF
 					echo ""
 					echo -e "${normale}Procedo?"
 					echo ""
-					echo -e "Procedo?"
+					echo -e "Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_USER;
@@ -1927,7 +1927,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_GRP"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}concedendo ${txtverde}$PRIVILEGI ${normale}sulle tabelle a ${txtverde}$NEW_GRP"
 					echo ""
-					echo -e "${normale}Procedo?"
+					echo -e "${normale}Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_GRP;
@@ -1980,7 +1980,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_GRP"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}revocando ${txtverde}$PRIVILEGI ${normale}sulle tabelle da ${txtverde}$NEW_GRP"
 					echo ""
-					echo -e "Procedo?"
+					echo -e "Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_GRP;

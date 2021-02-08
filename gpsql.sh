@@ -68,8 +68,11 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
 		echo ""
 
         read -p "Imposta EPSG di partenza (default $EPSG1): "
@@ -118,8 +121,11 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
 		echo ""
 
 		read -p "Imposta DATABASE (default $DATABASE): "
@@ -162,8 +168,11 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
 		echo ""
 
 		read -p "Imposta DATABASE (default $DATABASE): "
@@ -200,8 +209,12 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
+		echo ""
 
 		echo ""
 		read -p "Imposta EPSG (default $EPSG): "
@@ -238,8 +251,12 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
+		echo ""
 
 		echo ""
     read -p "Imposta il path della directory: (default $PATH_DIR): "
@@ -270,8 +287,11 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
 		echo ""
 
     read -p "Imposta il path e nome del file (default $PATH_FILE): "
@@ -302,8 +322,11 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
 		echo ""
 
 		read -p "Imposta il path di destinazione (default $PATH_DUMP): "
@@ -334,8 +357,11 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+		read -s
+		if [[ $REPLY ]]; then
+			PASSWORD=$REPLY
+		fi
 		echo ""
 
 		read -p "Imposta il path con il file di partenza (default $PATH_RESTORE): "
@@ -366,8 +392,11 @@ function variabili_HOST,PORT,USER,PASSWORD {
 		fi
 		echo $USER
 
-		echo "Imposta PASSWORD: "
-		read -s $PASSWORD
+		echo -e "Imposta PASSWORD : "
+    read -s
+    if [[ $REPLY ]]; then
+      PASSWORD=$REPLY
+    fi
 		echo ""
 }
 

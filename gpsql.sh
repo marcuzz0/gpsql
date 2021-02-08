@@ -413,7 +413,7 @@ function variabili_HOST,PORT,USER,PASSWORD {
       PASSWORD=$REPLY
     fi
 		echo ""
-		
+
 }
 
 #########################################################################################
@@ -1464,8 +1464,6 @@ esac
 
 
 
-
-
 6)	clear
 		echo ""
 		echo -e "${txtsfoblu}Importa raster"
@@ -1880,8 +1878,7 @@ EOF
 
  4)		clear
 			echo ""
-			echo -e "${txtsfoblu}
-			echo -e "${txtsfoblu}"Assegna a gruppo"
+			echo -e "${txtsfoblu}Assegna a gruppo"
 			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
 			echo -e "database di uno specifico schema"
 			echo ""

@@ -1890,11 +1890,11 @@ EOF
 			echo -e "Inserisci il nome del database:"
 			read DATABASE
 			clear
-				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\dn"
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\dn"
 			echo -e "Inserisci il nome dello schema:"
 			read SCHEMA
 			clear
-				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
 			echo -e "Inserisci il nome del nuovo gruppo:"
 			read NEW_GRP
 			clear

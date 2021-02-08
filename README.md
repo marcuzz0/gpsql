@@ -21,4 +21,4 @@ $ gpsql
 
 
 
-da atom
+da atom2

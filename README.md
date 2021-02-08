@@ -1,6 +1,7 @@
 # gpsql
 ## Premessa
-Questo tool permette la gestione di database Postgresql in ambiente shell includendo una svariata serie di comandi in psql
+Questo script permette la gestione di database Postgresql in ambiente shell includendo una svariata serie di comandi in psql.
+Di seguito vengono riportati i passaggi per l'installazione delle dipendenze necessarie al corretto funzionamento dello script.
 
 ## Installazione per Debian or Ubuntu Linux
 ```
@@ -18,7 +19,3 @@ $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download
 $ chmod +x pgfutter
 $ gpsql
 ````
-
-
-
-da atom

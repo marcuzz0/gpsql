@@ -21,4 +21,4 @@ $ gpsql
 
 
 
-da git
+da atom

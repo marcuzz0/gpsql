@@ -924,17 +924,32 @@ case $choice in
 			echo ""
 			echo -e "${txtsfoblu}Crea tabella da *.sql"
 			echo -e "${normale}Questo tool permette di generare una tabella a partire da un file *.sql"
-				variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE
-				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
-					alter role $USER in database $DATABASE set search_path to $SCHEMA,public;
+			echo ""
+				variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "Scegli il database:  "
+			echo ""
+			read VAR0
+		  clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+			echo ""
+			echo -n "Scegli lo schema:  "
+			echo ""
+			read VAR1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
+					alter role $USER in database $VAR0 set search_path to $VAR1,public;
 					\q
 EOF
-				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "show search_path"
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "show search_path"
 			sleep 1
-				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -f $PATH_FILE
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -f $PATH_FILE
 			clear
-				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c \
-				"SELECT grantee, table_schema, table_name FROM information_schema.role_table_grants WHERE table_schema = '$SCHEMA' AND grantee = '$USER' "
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+				"SELECT grantee, table_schema, table_name FROM information_schema.role_table_grants WHERE table_schema = '$VAR1' AND grantee = '$USER' "
 			echo ""
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
@@ -2181,7 +2196,7 @@ EOF
 
   5)		gpsql.sh
 			exit
-			;;	
+			;;
 
 esac
 ;;

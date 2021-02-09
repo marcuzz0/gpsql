@@ -9,6 +9,7 @@ NB per il sistema operativo Windows 10 è necessario abilitare la bash di Window
 ## Installazione per Debian o Ubuntu Linux
 ```
 $ sudo apt-get update && sudo apt-get upgrade
+$ mkdir bin
 $ cd $HOME/bin
 $ git clone https://github.com/Marcuzzo77/gpsql.git
 $ sudo apt-get install -y dialog
@@ -16,26 +17,32 @@ $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download
 $ chmod +x pgfutter
 $ echo "export PATH="$PATH:$HOME/bin/gpsql"" >> .bashrc
 $ cd gpsql
-$ ./gpsql
+$ gpsql.sh
 ```
 
 ## Installazione per Mac OSX
 ```
+$ mkdir bin
+$ cd $HOME/bin
+$ git clone https://github.com/Marcuzzo77/gpsql.git
 $ brew install dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_darwin_amd64
 $ chmod +x pgfutter
-$ gpsql
+$ echo 'export PATH="$PATH:$HOME/bin/gpsql"' >> .bashrc
+$ cd gpsql
+$ gpsql.sh
 ````
 
 ## Installazione per Windows 10
 ```
 $ sudo apt-get update && sudo apt-get upgrade
+$ mkdir bin
 $ cd $HOME/bin
 $ git clone https://github.com/Marcuzzo77/gpsql.git
 $ sudo apt-get install -y dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_linux_amd64
 $ chmod +x pgfutter
-$ echo "export PATH="$PATH:$HOME/bin/gpsql"" >> .bashrc
+$ echo 'export PATH="$PATH:$HOME/bin/gpsql"' >> .bashrc
 $ cd gpsql
-$ ./gpsql
+$ gpsql.sh
 ```

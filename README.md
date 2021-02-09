@@ -6,7 +6,7 @@ E' tuttavia necessario aver già in precedenza installato e configurato Postgres
 
 NB per il sistema operativo Windows 10 è necessario abilitare la bash di Windows, qui una delle tante guide che si trovano in rete (https://www.lffl.org/2016/08/guida-abilitare-la-bash-windows-10.html)
 
-## Installazione per Debian or Ubuntu Linux
+## Installazione per Debian o Ubuntu Linux
 ```
 $ sudo apt-get update && sudo apt-get upgrade
 $ cd $HOME/bin

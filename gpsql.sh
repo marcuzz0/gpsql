@@ -1518,21 +1518,28 @@ EOF
 			echo -e "${txtsfoblu}Associa utente a gruppo"
 			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
 			echo -e "database di uno specifico schema"
-    		psql -U postgres -d postgres -c "\du;"
-    	echo ""
-    	echo -n "Scrivi il nome del gruppo: "
-    	echo ""
-    	read VAR0
-			clear
-				psql -U postgres -d postgres -c "\du;"
 			echo ""
-			echo -n "Scrivi il nome dell'utente: "
+				variabili_HOST,PORT,USER,PASSWORD
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "Scegli il database: "
+			echo ""
+			read VAR0
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\du"
+			echo ""
+			echo -n "Scrivi il nome del gruppo:  "
 			echo ""
 			read VAR1
-				psql -U postgres -d postgres -c "grant $VAR0 to $VAR1;"
+			echo ""
+			echo -n "Scrivi il nome dell'utente:  "
+			echo ""
+			read VAR2
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "grant $VAR1 to $VAR2"
 			sleep 1
 			clear
-				psql -U postgres -d postgres -c "\du;"
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\du"
 			echo ""
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""

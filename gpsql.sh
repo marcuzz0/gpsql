@@ -767,9 +767,9 @@ esac
 
 3)	clear
 
-HEIGHT=16
+HEIGHT=17
 WIDTH=38
-CHOICE_HEIGHT=16
+CHOICE_HEIGHT=17
 BACKTITLE="$BTITLE"
 TITLE="Gestione tabelle"
 MENU="Scegli un'opzione:"
@@ -781,9 +781,10 @@ OPTIONS=(
 3 "Crea tabella da *.sql"
 4 "Crea tabella da *.csv"
 5 "Cancella tabella"
-6 "Dump tabella"
-7 "Restore tabella"
-8 "Menù principale"
+6 "Esporta dati in *.csv"
+7 "Dump tabella"
+8 "Restore tabella"
+9 "Menù principale"
 )
 choice=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -1085,8 +1086,50 @@ EOF
 			exit
 			;;
 
+6)  clear
+	  echo ""
+		echo -e "${txtsfoblu}Esporta dati in *.csv"
+		echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
+		echo -e "database"
+		echo ""
+			variabili_HOST,PORT,USER,PASSWORD,PATH_DIR
+		clear
+			PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+		echo ""
+		echo -n "Scegli il database: "
+		echo ""
+		read VAR0
+		clear
+			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+		echo ""
+		echo -n "Scegli lo schema: "
+		echo ""
+		read VAR1
+		clear
+			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+		echo ""
+		echo -n "Scegli lo tabella da esportare: "
+		echo ""
+		read VAR2
+		echo ""
+		echo -n "Scegli il nome del file in uscita: "
+		echo ""
+		read VAR3
+		echo ""
+		echo -n "Scegli il delimitatore: "
+		echo ""
+		read VAR4
+			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+			"\copy $VAR1.$VAR2 to $PATH_DIR/$VAR3.csv DELIMITER '$VAR4' CSV HEADER;"
+		echo ""
+		echo -n "Premi un tasto per tornare al menù principale... "
+		echo ""
+		read
+			gpsql.sh
+		exit
+		;;
 
-	6)  clear
+	7)  clear
 			echo ""
 			echo -e "${txtsfoblu}Dump tabella"
 			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
@@ -1133,7 +1176,7 @@ EOF
 			exit
 			;;
 
-	7)	clear
+	8)	clear
 			echo ""
 			echo -e "${txtsfoblu}Restore tabella"
 			echo -e "${normale}Questo tool permette di fare un ripristino da un file in formato *.sql di una"
@@ -1183,7 +1226,7 @@ EOF
 			exit
 			;;
 
-	8)		gpsql.sh
+	9)		gpsql.sh
 			exit
 			;;
 esac

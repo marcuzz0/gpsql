@@ -14,6 +14,7 @@ $ git clone https://github.com/Marcuzzo77/gpsql.git
 $ sudo apt-get install -y dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_linux_amd64
 $ chmod +x pgfutter
+$ cd gpsql
 $ ./gpsql
 ```
 
@@ -33,5 +34,6 @@ $ git clone https://github.com/Marcuzzo77/gpsql.git
 $ sudo apt-get install -y dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_linux_amd64
 $ chmod +x pgfutter
+$ cd gpsql
 $ ./gpsql
 ```

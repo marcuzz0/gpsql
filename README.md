@@ -3,7 +3,7 @@
 Questo script permette la gestione di database Postgresql in ambiente shell includendo una svariata serie di comandi psql.
 Di seguito vengono riportati i passaggi per l'installazione delle dipendenze necessarie al corretto funzionamento dello script.
 
-E' tuttavia necessario aver già in precedenza installato e configurato Postgresql sul sistema operativo per il correttofunzionamento dello script.
+E' tuttavia necessario aver già in precedenza installato e configurato Postgresql sul sistema operativo per il corretto funzionamento dello script.
 
 NB per il sistema operativo Windows 10 è necessario abilitare la bash di Windows, qui una delle tante guide che si trovano in rete (https://www.lffl.org/2016/08/guida-abilitare-la-bash-windows-10.html)
 

@@ -767,9 +767,9 @@ esac
 
 3)	clear
 
-HEIGHT=17
+HEIGHT=19
 WIDTH=38
-CHOICE_HEIGHT=17
+CHOICE_HEIGHT=19
 BACKTITLE="$BTITLE"
 TITLE="Gestione tabelle"
 MENU="Scegli un'opzione:"
@@ -782,9 +782,11 @@ OPTIONS=(
 4 "Crea tabella da *.csv"
 5 "Cancella tabella"
 6 "Esporta dati in *.csv"
-7 "Dump tabella"
-8 "Restore tabella"
-9 "Menù principale"
+7	"Aggiungi colonna"
+8 "Cancella colonna"
+9 "Dump tabella"
+10 "Restore tabella"
+11 "Menù principale"
 )
 choice=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -1010,13 +1012,13 @@ EOF
 					echo -e "${txtsfoblu}Crea tabella da *.csv senza geometria${normale}"
 						variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
 					clear
-					PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+						PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
 					echo -n "A quale database vuoi associare la creazione della tabella?  "
 					echo ""
 					read VAR0
 					clear
-					PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 					echo ""
 					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
@@ -1086,50 +1088,155 @@ EOF
 			exit
 			;;
 
-6)  clear
-	  echo ""
-		echo -e "${txtsfoblu}Esporta dati in *.csv"
-		echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
-		echo -e "database"
-		echo ""
-			variabili_HOST,PORT,USER,PASSWORD,PATH_DIR
-		clear
-			PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
-		echo ""
-		echo -n "Scegli il database: "
-		echo ""
-		read VAR0
-		clear
-			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
-		echo ""
-		echo -n "Scegli lo schema: "
-		echo ""
-		read VAR1
-		clear
-			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
-		echo ""
-		echo -n "Scegli lo tabella da esportare: "
-		echo ""
-		read VAR2
-		echo ""
-		echo -n "Scegli il nome del file in uscita: "
-		echo ""
-		read VAR3
-		echo ""
-		echo -n "Scegli il delimitatore: "
-		echo ""
-		read VAR4
-			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
-			"\copy $VAR1.$VAR2 to $PATH_DIR/$VAR3.csv DELIMITER '$VAR4' CSV HEADER;"
-		echo ""
-		echo -n "Premi un tasto per tornare al menù principale... "
-		echo ""
-		read
-			gpsql.sh
-		exit
-		;;
+ 6)  	clear
+	  	echo ""
+			echo -e "${txtsfoblu}Esporta dati in *.csv"
+			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
+			echo -e "database"
+			echo ""
+				variabili_HOST,PORT,USER,PASSWORD,PATH_DIR
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "Scegli il database: "
+			echo ""
+			read VAR0
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+			echo ""
+			echo -n "Scegli lo schema: "
+			echo ""
+			read VAR1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+			echo ""
+			echo -n "Scegli la tabella da esportare: "
+			echo ""
+			read VAR2
+			echo ""
+			echo -n "Scegli il nome del file in uscita: "
+			echo ""
+			read VAR3
+			echo ""
+			echo -n "Scegli il delimitatore: "
+			echo ""
+			read VAR4
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+				"\copy $VAR1.$VAR2 to $PATH_DIR/$VAR3.csv DELIMITER '$VAR4' CSV HEADER;"
+			echo ""
+			echo -n "Premi un tasto per tornare al menù principale... "
+			echo ""
+			read
+				gpsql.sh
+			exit
+			;;
 
-	7)  clear
+ 7)  clear
+		 echo ""
+		 echo -e "${txtsfoblu}Aggiungi colonna"
+		 echo -e "${normale}Questo tool permette di creare una nuova colonna in una tabella presente in un"
+		 echo -e "database. Attualmente viene assocciato in automatico alla colonna una stringa di tipo testo."
+		 echo ""
+		 		variabili_HOST,PORT,USER,PASSWORD
+		 clear
+		 		PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+		 echo ""
+		 echo -n "Scegli il database: "
+		 echo ""
+		 read VAR0
+		 clear
+		 		PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+		 echo ""
+		 echo -n "Scegli lo schema: "
+		 echo ""
+		 read VAR1
+		 clear
+		 		PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+		 echo ""
+		 echo -n "Scegli la tabella a cui aggiungere la colonna: "
+		 echo ""
+		 read VAR2
+		 echo ""
+		 echo -n "Inserisci il nome della colonna da aggiungere: "
+		 echo ""
+		 read VAR3
+		 echo ""
+		 		PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+			"ALTER TABLE $VAR1.$VAR2 ADD $VAR3 text;"
+		 read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+				if [[ $REPLY ]]; then
+					SI=$REPLY
+				fi
+				# echo $SI
+				clear
+					if [ $SI = "s" ]; then
+						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+					else
+						gpsql.sh
+					fi
+		 echo ""
+		 echo -n "Premi un tasto per tornare al menù principale... "
+	   echo ""
+		 read
+		 		gpsql.sh
+	   exit
+		 ;;
+
+
+	8)  clear
+			echo ""
+			echo -e "${txtsfoblu}Cancella colonna"
+			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
+			echo -e "database"
+			echo ""
+				variabili_HOST,PORT,USER,PASSWORD
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "Scegli il database: "
+			e	cho ""
+			read VAR0
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+			echo ""
+			echo -n "Scegli lo schema: "
+			echo ""
+			read VAR1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+			echo ""
+			echo -n "Scegli la tabella a cui cancellare la colonna: "
+			echo ""
+			read VAR2
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+			echo ""
+			echo -n "Inserisci il nome della colonna da cancellare: "
+			echo ""
+			read VAR3
+			echo ""
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+				"ALTER TABLE $VAR1.$VAR2 DROP COLUMN $VAR3;"
+			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+				 if [[ $REPLY ]]; then
+					 SI=$REPLY
+				 fi
+				 # echo $SI
+				 clear
+					 if [ $SI = "s" ]; then
+						 PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+					 else
+						 gpsql.sh
+					 fi
+			echo ""
+			echo -n "Premi un tasto per tornare al menù principale... "
+			echo ""
+			read
+				 gpsql.sh
+			exit
+			;;
+
+ 9)  clear
 			echo ""
 			echo -e "${txtsfoblu}Dump tabella"
 			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
@@ -1176,7 +1283,7 @@ EOF
 			exit
 			;;
 
-	8)	clear
+	10)	clear
 			echo ""
 			echo -e "${txtsfoblu}Restore tabella"
 			echo -e "${normale}Questo tool permette di fare un ripristino da un file in formato *.sql di una"
@@ -1226,7 +1333,7 @@ EOF
 			exit
 			;;
 
-	9)		gpsql.sh
+	11)		gpsql.sh
 			exit
 			;;
 esac

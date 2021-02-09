@@ -417,9 +417,53 @@ function variabili_HOST,PORT,USER,PASSWORD {
 }
 
 #########################################################################################
-# FUNZIONI DI DIALOGO
+# FUNZIONI DI DIALOGO RICORSIVE
 #########################################################################################
+function Aggiungi_colonna {
 
+				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+			echo ""
+			echo -n "Inserisci il nome della colonna da aggiungere: "
+			echo ""
+			read VAR3
+			echo ""
+				 PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+			 "ALTER TABLE $VAR1.$VAR2 ADD $VAR3 text;"
+			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+				 if [[ $REPLY ]]; then
+					 SI=$REPLY
+				 fi
+				 # echo $SI
+				 clear
+					 if [ $SI = "s" ]; then
+						 PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+					 else
+						 gpsql.sh
+					 fi
+}
+
+function Cancella_colonna {
+
+				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+			echo ""
+			echo -n "Inserisci il nome della colonna da cancellare: "
+			echo ""
+			read VAR3
+			echo ""
+				 PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
+			 "ALTER TABLE $VAR1.$VAR2 DROP COLUMN $VAR3"
+			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+				 if [[ $REPLY ]]; then
+					 SI=$REPLY
+				 fi
+				 # echo $SI
+				 clear
+					 if [ $SI = "s" ]; then
+						 PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+					 else
+						 gpsql.sh
+					 fi
+			}
 
 #########################################################################################
 clear
@@ -1131,57 +1175,46 @@ EOF
 			exit
 			;;
 
- 7)  clear
-		 echo ""
-		 echo -e "${txtsfoblu}Aggiungi colonna"
-		 echo -e "${normale}Questo tool permette di creare una nuova colonna in una tabella presente in un"
-		 echo -e "database. Attualmente viene assocciato in automatico alla colonna una stringa di tipo testo."
-		 echo ""
-		 		variabili_HOST,PORT,USER,PASSWORD
-		 clear
-		 		PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
-		 echo ""
-		 echo -n "Scegli il database: "
-		 echo ""
-		 read VAR0
-		 clear
-		 		PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
-		 echo ""
-		 echo -n "Scegli lo schema: "
-		 echo ""
-		 read VAR1
-		 clear
-		 		PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
-		 echo ""
-		 echo -n "Scegli la tabella a cui aggiungere la colonna: "
-		 echo ""
-		 read VAR2
-		 echo ""
-		 echo -n "Inserisci il nome della colonna da aggiungere: "
-		 echo ""
-		 read VAR3
-		 echo ""
-		 		PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
-			"ALTER TABLE $VAR1.$VAR2 ADD $VAR3 text;"
-		 read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+ 7)  	clear
+ 		 	echo ""
+ 	 		echo -e "${txtsfoblu}Aggiungi colonna"
+ 			echo -e "${normale}Questo tool permette di creare una nuova colonna in una tabella presente in un"
+ 			echo -e "database. Attualmente viene assocciato in automatico alla colonna una stringa di tipo testo."
+ 			echo ""
+				variabili_HOST,PORT,USER,PASSWORD
+ 			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+ 			echo ""
+ 			echo -n "Scegli il database: "
+ 			echo ""
+ 			read VAR0
+ 			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+ 			echo ""
+ 			echo -n "Scegli lo schema: "
+ 			echo ""
+ 			read VAR1
+ 			clear
+			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+ 			echo ""
+ 			echo -n "Scegli la tabella a cui aggiungere la colonna: "
+ 			echo ""
+ 			read VAR2
+ 			clear
+ 		 		Aggiungi_colonna
+			echo ""
+ 		 	read -p "Vuoi ripetere l'operazione? (s/n) (default $SI): "
 				if [[ $REPLY ]]; then
 					SI=$REPLY
 				fi
-				# echo $SI
-				clear
+		 			clear
 					if [ $SI = "s" ]; then
-						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+						Aggiungi_colonna
 					else
 						gpsql.sh
-					fi
-		 echo ""
-		 echo -n "Premi un tasto per tornare al menù principale... "
-	   echo ""
-		 read
-		 		gpsql.sh
-	   exit
-		 ;;
-
+				fi
+	   	exit
+		 	;;
 
 	8)  clear
 			echo ""
@@ -1194,7 +1227,7 @@ EOF
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
 			echo -n "Scegli il database: "
-			e	cho ""
+			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
@@ -1209,30 +1242,18 @@ EOF
 			echo ""
 			read VAR2
 			clear
-				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
+				Cancella_colonna
 			echo ""
-			echo -n "Inserisci il nome della colonna da cancellare: "
-			echo ""
-			read VAR3
-			echo ""
-				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
-				"ALTER TABLE $VAR1.$VAR2 DROP COLUMN $VAR3;"
-			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
-				 if [[ $REPLY ]]; then
-					 SI=$REPLY
-				 fi
-				 # echo $SI
-				 clear
-					 if [ $SI = "s" ]; then
-						 PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
-					 else
-						 gpsql.sh
-					 fi
-			echo ""
-			echo -n "Premi un tasto per tornare al menù principale... "
-			echo ""
-			read
-				 gpsql.sh
+			read -p "Vuoi ripetere l'operazione? (s/n) (default $SI): "
+ 				if [[ $REPLY ]]; then
+ 					SI=$REPLY
+ 				fi
+ 		  		clear
+ 					if [ $SI = "s" ]; then
+ 						Cancella_colonna
+ 				else
+ 						gpsql.sh
+ 				fi
 			exit
 			;;
 
@@ -1863,14 +1884,6 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			clear
-
-
-
-
-
-
-
-
 			echo ""
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
@@ -2161,10 +2174,14 @@ EOF
 					echo ""
 					read
 						gpsql.sh
-						exit
-						;;
+					exit
+					;;
 		esac
 		;;
+
+  5)		gpsql.sh
+			exit
+			;;	
 
 esac
 ;;
@@ -2176,7 +2193,6 @@ esac
     	#sleep 1
     	exit
     	;;
-
 
 
 esac

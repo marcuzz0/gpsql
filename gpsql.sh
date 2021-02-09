@@ -2027,7 +2027,6 @@ esac
     	exit
     	;;
 
-esac
-;;
+
 
 esac

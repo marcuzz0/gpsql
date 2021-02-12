@@ -988,6 +988,7 @@ EOF
 					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
+					sleep 1
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""

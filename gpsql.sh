@@ -529,8 +529,7 @@ case $choice in
 	1)	clear
 			echo ""
 			echo -e "${txtsfoblu}Lista dei database"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di visionare la lista dei database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -546,8 +545,7 @@ case $choice in
 	2)	clear
 			echo ""
 			echo -e "${txtsfoblu}Crea database"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di creare un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -586,8 +584,7 @@ case $choice in
 	3)	clear
 			echo ""
 			echo -e "${txtsfoblu}Cancella database"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di cancellare un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
       clear
@@ -617,8 +614,7 @@ EOF
   4)	clear
 			echo ""
 			echo -e "${txtsfoblu}Dump database"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di eseguire un backup del database scelto"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP
 			clear
@@ -639,8 +635,7 @@ EOF
   5)  clear
 			echo ""
 	 		echo -e "${txtsfoblu}Restore database"
-	 		echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-	 		echo -e "database di uno specifico schema"
+	 		echo -e "${normale}Questo tool permette di ripristinare un backup a partire da un file"
 			echo ""
 		 		variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE
 		  clear
@@ -665,8 +660,7 @@ EOF
   6)  clear
 			echo ""
 			echo -e "${txtsfoblu}Lista estensioni"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di verificare le estensioni presenti in un database"
 			echo ""
 			 	variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -721,8 +715,7 @@ case $choice in
 	1)	clear
 			echo ""
 			echo -e "${txtsfoblu}Lista degli schemi"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di visionare la lista degli schemi presenti in un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -744,8 +737,7 @@ case $choice in
   2) 	clear
 			echo ""
 			echo -e "${txtsfoblu}Crea schema"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di creare uno schema presente in un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -775,8 +767,7 @@ case $choice in
 	3)  clear
 			echo ""
 			echo -e "${txtsfoblu}Cancella schema"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di cancellare uno schema presente in un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1234,8 +1225,7 @@ EOF
 	8)  clear
 			echo ""
 			echo -e "${txtsfoblu}Cancella colonna"
-			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
-			echo -e "database"
+			echo -e "${normale}Questo tool permette di cancellare una colonna presente in una tabella"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1275,8 +1265,7 @@ EOF
  9)  clear
 			echo ""
 			echo -e "${txtsfoblu}Dump tabella"
-			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
-			echo -e "database"
+			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP
 			clear
@@ -1406,8 +1395,8 @@ case $choice in
 	1)	clear
 			echo ""
 			echo -e "${txtsfoblu}Lista degli utenti"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di visionare la lista di tutti gli utenti presenti in un"
+			echo -e "database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1423,8 +1412,7 @@ case $choice in
 	2)	clear
 			echo ""
 			echo -e "${txtsfoblu}Crea utente"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di creare un utente semplice con nome utente e password"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1455,8 +1443,8 @@ EOF
 	3)	clear
 			echo ""
 			echo -e "${txtsfoblu}Crea superutente"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di creare un superutente con nome utente, password e"
+			echo -e "con la possibilità di creare database e ruoli"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1487,8 +1475,7 @@ EOF
 	4)	clear
 			echo ""
 			echo -e "${txtsfoblu}Cancella utente"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di cancellare un utente presente in un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1516,8 +1503,8 @@ EOF
 	5)	clear
 			echo ""
 			echo -e "${txtsfoblu}Associa utente a gruppo"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di associare un utente ad un gruppo presente in un"
+			echo -e "database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -1583,8 +1570,8 @@ case $choice in
 	1)	clear
 			echo ""
 			echo -e "${txtsfoblu}Lista dei gruppi"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di visionare la lista di tutti i gruppi presenti in un"
+			echo -e "database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
@@ -1599,8 +1586,7 @@ case $choice in
 	2)  clear
 			echo ""
 			echo -e "${txtsfoblu}Crea gruppo"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di creare un gruppo"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
@@ -1623,8 +1609,7 @@ case $choice in
 	3)	clear
 			echo ""
 			echo -e "${txtsfoblu}Cancella gruppo"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette di cancellare un gruppo presente in un database"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
@@ -1885,8 +1870,7 @@ EOF
  2)   clear
 			echo ""
 			echo -e "${txtsfoblu}Privilegi a vista"
-			echo -e "${normale}Questo tool permette di creare una tabella per mezzo del comando shp2psql e di"
-			echo -e "importarla in un database"
+			echo -e "${normale}Questo tool permette di conoscere i privilegi dei vari utenti su una vista"
 				variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -1917,8 +1901,8 @@ EOF
 	3)	clear
 			echo ""
 			echo -e "${txtsfoblu}Assegna ad utente"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette associare ad un utente dei permessi o privilegi di "
+			echo -e "SELECT,INSERT,UPDATE,DELETE"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
@@ -2064,8 +2048,8 @@ EOF
  4)		clear
 			echo ""
 			echo -e "${txtsfoblu}Assegna a gruppo"
-			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
-			echo -e "database di uno specifico schema"
+			echo -e "${normale}Questo tool permette associare ad un gruppo dei permessi o privilegi di "
+			echo -e "SELECT,INSERT,UPDATE,DELETE"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear

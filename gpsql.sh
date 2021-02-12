@@ -953,6 +953,7 @@ EOF
 	4)  clear
 			echo ""
 			echo -e "${txtsfoblu}Crea tabella da *.csv"
+			echo ""
 			echo -e "${normale}Questo tool permette di generare una tabella a partire da un file *.csv. Si può:"
 			echo ""
 			echo -e "1- ${grassetto}${txtverde}importare un file con geometria (Lat,Lon,Hei)${normale} il quale verrà generato nel database"

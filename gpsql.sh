@@ -802,9 +802,9 @@ esac
 
 3)	clear
 
-HEIGHT=19
+HEIGHT=20
 WIDTH=38
-CHOICE_HEIGHT=19
+CHOICE_HEIGHT=20
 BACKTITLE="$BTITLE"
 TITLE="Gestione tabelle"
 MENU="Scegli un'opzione:"
@@ -817,11 +817,12 @@ OPTIONS=(
 4 "Crea tabella da *.csv"
 5 "Cancella tabella"
 6 "Esporta dati in *.csv"
-7	"Aggiungi colonna"
-8 "Cancella colonna"
-9 "Dump tabella"
-10 "Restore tabella"
-11 "Menù principale"
+7 "Esporta query su file"
+8	"Aggiungi colonna"
+9 "Cancella colonna"
+10 "Dump tabella"
+11 "Restore tabella"
+12 "Menù principale"
 )
 choice=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -1141,8 +1142,8 @@ EOF
  6)  	clear
 	  	echo ""
 			echo -e "${txtsfoblu}Esporta dati in *.csv"
-			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql presente in un"
-			echo -e "database"
+			echo -e "${normale}Questo tool permette di esportare una tabella in formato *.csv presente in un"
+			echo -e "database con la scelta del delimitatore"
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD,PATH_DIR
 			clear
@@ -1182,6 +1183,43 @@ EOF
 			;;
 
  7)  	clear
+			echo ""
+			echo -e "${txtsfoblu}Esporta query su file"
+			echo -e "${normale}Questo tool permette di esportare la query dei campi di una tabella in"
+			echo -e "formato *.txt presente in un database"
+			echo ""
+				variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "Scegli il database: "
+			echo ""
+			read VAR0
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+			echo ""
+			echo -n "Scegli lo schema: "
+			echo ""
+			read VAR1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+			echo ""
+			echo -n "Scegli la tabella da esportare: "
+			echo ""
+			read VAR2
+				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
+					\o $PATH_FILE;
+					select * from $VAR1.$VAR2;
+EOF
+			echo ""
+			echo -n "Premi un tasto per tornare al menù principale... "
+			echo ""
+			read
+			gpsql.sh
+			exit
+			;;
+
+ 8)  	clear
  		 	echo ""
  	 		echo -e "${txtsfoblu}Aggiungi colonna"
  			echo -e "${normale}Questo tool permette di creare una nuova colonna in una tabella presente in un"
@@ -1222,7 +1260,7 @@ EOF
 	   	exit
 		 	;;
 
-	8)  clear
+	9)  clear
 			echo ""
 			echo -e "${txtsfoblu}Cancella colonna"
 			echo -e "${normale}Questo tool permette di cancellare una colonna presente in una tabella"
@@ -1262,7 +1300,7 @@ EOF
 			exit
 			;;
 
- 9)  clear
+ 10)  clear
 			echo ""
 			echo -e "${txtsfoblu}Dump tabella"
 			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql"
@@ -1308,7 +1346,7 @@ EOF
 			exit
 			;;
 
-	10)	clear
+	11)	clear
 			echo ""
 			echo -e "${txtsfoblu}Restore tabella"
 			echo -e "${normale}Questo tool permette di fare un ripristino da un file in formato *.sql di una"
@@ -1358,7 +1396,7 @@ EOF
 			exit
 			;;
 
-	11)		gpsql.sh
+	12)		gpsql.sh
 			exit
 			;;
 esac
@@ -1679,9 +1717,6 @@ esac
 		exit
 		;;
 
-
-
-
 7)	clear
 
 HEIGHT=11
@@ -1794,8 +1829,6 @@ case $choice in
 			;;
 esac
 ;;
-
-
 
 8)	clear
 

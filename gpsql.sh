@@ -973,6 +973,7 @@ EOF
 			1)	clear
 					echo ""
 					echo -e "${txtsfoblu}Crea tabella da *.csv con geometria (Lat,Lon,Hei)${normale}"
+					echo ""
 						variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
 					clear
 					PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -1061,6 +1062,7 @@ EOF
 			3)	clear
 					echo ""
 					echo -e "${txtsfoblu}Crea tabella da *.csv senza geometria${normale}"
+					echo ""
 						variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"

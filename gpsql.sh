@@ -1001,6 +1001,7 @@ EOF
 					sleep 1
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
 							ALTER TABLE $VAR1.temp ADD COLUMN id SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.temp ALTER COLUMN id type integer USING (id::integer);
 							ALTER TABLE $VAR1.temp ADD COLUMN geom geometry(Point,$EPSG);
 							UPDATE $VAR1.temp SET geom=ST_SetSRID(ST_MakePoint(lon::double precision,lat::double precision),$EPSG);
 							CREATE VIEW $VAR1.temp1 AS SELECT id,lat,lon,hei,geom from $VAR1.temp;
@@ -1035,6 +1036,7 @@ EOF
 					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
+					sleep 1
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""
@@ -1046,7 +1048,8 @@ EOF
 						./pgfutter --host $HOST --port $PORT --dbname $VAR0 --schema $VAR1 --table $VAR2 --user $USER --pw $PASSWORD csv $PATH_FILE
 					sleep 1
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
-							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id integer SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.$VAR2 ALTER COLUMN id type integer USING (id::integer);
 							ALTER TABLE $VAR1.$VAR2 ADD COLUMN geom geometry(Point,$EPSG);
 							UPDATE $VAR1.$VAR2 SET geom=ST_SetSRID(ST_MakePoint(lon::double precision,lat::double precision),$EPSG);
 EOF
@@ -1078,6 +1081,7 @@ EOF
 					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
+					sleep 1
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""
@@ -1089,11 +1093,12 @@ EOF
 					./pgfutter --host $HOST --port $PORT --dbname $VAR0 --schema $VAR1 --table $VAR2 --user $USER --pw $PASSWORD csv $PATH_FILE
 					sleep 1
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
-							ALTER TABLE $VAR2.temp ADD COLUMN id SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id integer SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.$VAR2 ALTER COLUMN id type integer USING (id::integer);
 EOF
 					sleep 2
 					clear
-						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+						#PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""
 					echo -n "Premi un tasto per tornare al menù principale... "
 					echo ""

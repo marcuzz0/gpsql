@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# versione 1.0 creata da MS in data 31/01/2021
+# versione 1.0 creata da MSeverin in data 31/01/2021
 #########################################################################################
 # VARIABILI DI CONNESSIONE
 #########################################################################################
-BTITLE="GESTIONE PSQL 1.0 by MS"
+BTITLE="GESTIONE PSQL 1.0 by MSeverin"
 HOST="localhost"
 PORT="5432"
 USER="admin"

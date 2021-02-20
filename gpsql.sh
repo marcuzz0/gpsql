@@ -50,50 +50,50 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
 		read -s
 		if [[ $REPLY ]]; then
 			PASSWORD=$REPLY
 		fi
 		echo ""
 
-    read -p "Imposta EPSG di partenza (default $EPSG1): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta EPSG di partenza (default $EPSG1): "
 		if [[ $REPLY ]]; then
 			EPSG1=$REPLY
 		fi
 		echo $EPSG1
 
-    read -p "Imposta EPSG di destinazione (default $EPSG2): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta EPSG di destinazione (default $EPSG2): "
 		if [[ $REPLY ]]; then
 			EPSG2=$REPLY
 		fi
 		echo $EPSG2
 
-    read -p "Imposta il path e nome del file (default $PATH_FILE): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
 		echo $PATH_FILE
 
-    read -p "Imposta il nome della tabella di destinazione (default $NEW_TABLE): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta il nome della tabella di destinazione (default $NEW_TABLE): "
 		if [[ $REPLY ]]; then
 			NEW_TABLE=$REPLY
 		fi
@@ -105,44 +105,44 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
 		echo ""
 
-		read -p "Imposta DATABASE (default $DATABASE): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta DATABASE (default $DATABASE): "
 		if [[ $REPLY ]]; then
 			DATABASE=$REPLY
 		fi
 		echo $DATABASE
 
-		read -p "Imposta SCHEMA (default $SCHEMA): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta SCHEMA (default $SCHEMA): "
 		if [[ $REPLY ]]; then
 			SCHEMA=$REPLY
 		fi
 		echo $SCHEMA
 
-    read -p "Imposta il path e nome del file (default $PATH_FILE): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
@@ -154,38 +154,38 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
 		echo ""
 
-		read -p "Imposta DATABASE (default $DATABASE): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta DATABASE (default $DATABASE): "
 		if [[ $REPLY ]]; then
 			DATABASE=$REPLY
 		fi
 		echo $DATABASE
 
-		read -p "Imposta SCHEMA (default $SCHEMA): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta SCHEMA (default $SCHEMA): "
 		if [[ $REPLY ]]; then
 			SCHEMA=$REPLY
 		fi
@@ -197,25 +197,25 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -223,13 +223,13 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 		echo ""
 
 		echo ""
-		read -p "Imposta EPSG (default $EPSG): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta EPSG (default $EPSG): "
 		if [[ $REPLY ]]; then
 			EPSG=$REPLY
 		fi
 		echo $EPSG
 
-    read -p "Imposta il path e nome del file (default $PATH_FILE): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
@@ -240,25 +240,25 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -266,7 +266,7 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 		echo ""
 
 		echo ""
-    read -p "Imposta il path della directory: (default $PATH_DIR): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta il path della directory: (default $PATH_DIR): "
 		if [[ $REPLY ]]; then
 			PATH_DIR=$REPLY
 		fi
@@ -278,32 +278,32 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
 		echo ""
 
-    read -p "Imposta il path e nome del file (default $PATH_FILE): "
+    read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
@@ -315,32 +315,32 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
 		echo ""
 
-		read -p "Imposta il path di destinazione (default $PATH_DUMP): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta il path di destinazione (default $PATH_DUMP): "
 		if [[ $REPLY ]]; then
 			PATH_DUMP=$REPLY
 		fi
@@ -352,32 +352,32 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-		echo -E "Imposta PASSWORD : "
+		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
 		read -s
 		if [[ $REPLY ]]; then
 			PASSWORD=$REPLY
 		fi
 		echo ""
 
-		read -p "Imposta il path con il file di partenza (default $PATH_RESTORE): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta il path con il file di partenza (default $PATH_RESTORE): "
 		if [[ $REPLY ]]; then
 			PATH_RESTORE=$REPLY
 		fi
@@ -389,25 +389,25 @@ function variabili_HOST,PORT,USER,PASSWORD {
 
 		# echo `date`
 		# echo ""
-		read -p "Imposta HOST (default $HOST): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
 		echo $HOST
 
-		read -p "Imposta PORT (default $PORT): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
 		echo $PORT
 
-		read -p "Imposta USER (default $USER): "
+		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
 		echo $USER
 
-    echo -E "Imposta PASSWORD: "
+    echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD: "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
@@ -423,13 +423,13 @@ function Aggiungi_colonna {
 
 				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 			echo ""
-			echo -n "Inserisci il nome della colonna da aggiungere: "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome della colonna da aggiungere: "
 			echo ""
 			read VAR3
 			echo ""
 				 PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
 			 "ALTER TABLE $VAR1.$VAR2 ADD $VAR3 text;"
-			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+			read -p "${grassetto}${txtverde}-->${normale} Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
 				 if [[ $REPLY ]]; then
 					 SI=$REPLY
 				 fi
@@ -446,13 +446,13 @@ function Cancella_colonna {
 
 				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 			echo ""
-			echo -n "Inserisci il nome della colonna da cancellare: "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome della colonna da cancellare: "
 			echo ""
 			read VAR3
 			echo ""
 				 PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
 			 "ALTER TABLE $VAR1.$VAR2 DROP COLUMN $VAR3"
-			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+			read -p "${grassetto}${txtverde}-->${normale} Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
 				 if [[ $REPLY ]]; then
 					 SI=$REPLY
 				 fi
@@ -551,10 +551,10 @@ case $choice in
 			clear
      		PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
       echo ""
-      echo -n "Scrivi il nome del database da creare: "
+      echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del database da creare: "
       echo ""
       read VAR
-			read -p "Vuoi creare anche l'estensione postgis? (s/n) (default $SI): "
+			read -p "${grassetto}${txtverde}-->${normale} Vuoi creare anche l'estensione postgis? (s/n) (default $SI): "
 				if [[ $REPLY ]]; then
 					SI=$REPLY
 				fi
@@ -590,7 +590,7 @@ case $choice in
       clear
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
       echo ""
-    	echo -n "Scrivi il nome del database da cancellare:  "
+    	echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del database da cancellare:  "
       echo ""
       read VAR
 				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d postgres << EOF
@@ -620,7 +620,7 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scrivi il nome del database per il dump: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del database per il dump: "
 			echo ""
 			read VAR
 				PGPASSWORD="$PASSWORD" pg_dump -U $USER -h $HOST -p $PORT $VAR > $PATH_DUMP/$VAR.sql
@@ -641,7 +641,7 @@ EOF
 		  clear
 		 		PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 		 	echo ""
-		 	echo -n "Scrivi il nome del database per il restore: "
+		 	echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del database per il restore: "
 		 	echo ""
 		 	read VAR
 		 	 	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -c "create database $VAR"
@@ -666,7 +666,7 @@ EOF
 			clear
 			  PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scrivi il nome del database per verificare le estensioni installate: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del database per verificare le estensioni installate: "
 			echo ""
 			read VAR
 		  sleep 1
@@ -721,7 +721,7 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-      echo -n "Inserisci il nome del database sul quale visionare gli schemi associati:  "
+      echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome del database sul quale visionare gli schemi associati:  "
       echo ""
       read VAR
 		  clear
@@ -743,13 +743,13 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
   		echo ""
-			echo -n "In quale database vuoi creare lo schema?  "
+			echo -n "${grassetto}${txtverde}-->${normale} In quale database vuoi creare lo schema?  "
   		echo ""
       read VAR0
     	clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
   		echo ""
-    	echo -n "Inserisci il nome dello schema da creare:  "
+    	echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome dello schema da creare:  "
     	echo ""
       read VAR1
       	PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1;"
@@ -773,13 +773,13 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "In quale database vuoi cancellare lo schema?  "
+			echo -n "${grassetto}${txtverde}-->${normale} In quale database vuoi cancellare lo schema?  "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scrivi il nome dello schema da cancellare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome dello schema da cancellare:  "
 			echo ""
 			read VAR1
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "drop schema $VAR1 cascade"
@@ -844,18 +844,18 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database:  "
 			echo ""
 			read VAR0
 		  clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema:  "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
-			read -p "Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
+			read -p "${grassetto}${txtverde}-->${normale} Vuoi vedere il contenuto della tabella? (s/n) (default $SI): "
 				if [[ $REPLY ]]; then
 					SI=$REPLY
 				fi
@@ -886,22 +886,34 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "In quale database vuoi creare la tabella?  "
+			echo -n "${grassetto}${txtverde}-->${normale} In quale database vuoi creare la tabella?  "
 			echo ""
 			read VAR1
 		  clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Inserisci il nome dello schema a cui associare la tabella da creare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome dello schema a cui associare la tabella da creare:  "
 			echo ""
 			read VAR2
 		  clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "\dt $VAR2.*"
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "create schema $VAR2;"
+
 			echo ""
-   		echo -e "Scrivi il nome della ${txtsfoverde}tabella${normale} da creare con i relativi campi tra parentesi: \nes: ${txtsfoverde}test${normale}(id serial primary key,name text);"
+   		echo -e "${grassetto}${txtverde}-->${normale} Scrivi il nome della ${txtsfoverde}tabella${normale} da creare:"
 			read VAR3
-				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "create table $VAR2.$VAR3"
+			echo ""
+   		echo -e "${grassetto}${txtverde}-->${normale} Quante ${txtsfoverde}colonne${normale} vuoi creare:"
+			read VAR4
+				count=1
+					while [ $count -le $VAR4 ]
+					do
+							read -p "${grassetto}${txtverde}-->${normale} Inserisci il nome della colonna $count:" VAR5
+								arrey[$count-1]=$VAR5
+								count=$(( $count +1 ))
+					done
+				VAR6=`(IFS=,; echo "(${arrey[*]})")`
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "create table $VAR2.$VAR3$VAR6"
 			sleep 1
 			clear
 			echo ""
@@ -921,13 +933,13 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database:  "
 			echo ""
 			read VAR0
 		  clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema:  "
 			echo ""
 			read VAR1
 			clear
@@ -965,7 +977,7 @@ EOF
 			echo -e ""
 			echo -e	"${grassetto}${txtrosso}(NB: è necessario aver precedentemente installato il tool ${sottolineato}pgfutter${normale}${grassetto}${txtrosso})${normale} "
 			echo ""
-			echo -n "Scegli un'opzione (1 - 3): "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli un'opzione (1 - 3): "
 			echo ""
 			read -p "" choice
 
@@ -979,20 +991,20 @@ EOF
 					clear
 					PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
-					echo -n "A quale database vuoi associare la creazione della tabella?  "
+					echo -n "${grassetto}${txtverde}-->${normale} A quale database vuoi associare la creazione della tabella?  "
 					echo ""
 					read VAR0
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 					echo ""
-					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
+					echo -e "${grassetto}${txtverde}-->${normale} A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
 					sleep 1
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""
-					echo -e "Inserisci il nome della tabella da creare per l'import del file *.csv: "
+					echo -e "${grassetto}${txtverde}-->${normale} Inserisci il nome della tabella da creare per l'import del file *.csv: "
 					read VAR2
 					clear
 					sleep 1
@@ -1027,20 +1039,20 @@ EOF
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
-					echo -n "A quale database vuoi associare la creazione della tabella?  "
+					echo -n "${grassetto}${txtverde}-->${normale} A quale database vuoi associare la creazione della tabella?  "
 					echo ""
 					read VAR0
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 					echo ""
-					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
+					echo -e "${grassetto}${txtverde}-->${normale} A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
 					sleep 1
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""
-					echo -e "Inserisci il nome della tabella da creare per l'import del file *.csv: "
+					echo -e "${grassetto}${txtverde}-->${normale} Inserisci il nome della tabella da creare per l'import del file *.csv: "
 					read VAR2
 					clear
 					sleep 1
@@ -1072,20 +1084,20 @@ EOF
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
-					echo -n "A quale database vuoi associare la creazione della tabella?  "
+					echo -n "${grassetto}${txtverde}-->${normale} A quale database vuoi associare la creazione della tabella?  "
 					echo ""
 					read VAR0
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 					echo ""
-					echo -e "A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
+					echo -e "${grassetto}${txtverde}-->${normale} A quale schema vuoi associare la creazione della tabella?\n(NB: se non presente lo schema inserito verrà creato)"
 					read VAR1
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
 					sleep 1
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 					echo ""
-					echo -e "Inserisci il nome della tabella da creare per l'import del file *.csv: "
+					echo -e "${grassetto}${txtverde}-->${normale} Inserisci il nome della tabella da creare per l'import del file *.csv: "
 					read VAR2
 					clear
 					sleep 1
@@ -1124,19 +1136,19 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "In quale database vuoi cancellare la tabella?  "
+			echo -n "${grassetto}${txtverde}-->${normale} In quale database vuoi cancellare la tabella?  "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Inserisci il nome dello schema a cui cancellare la tabella associata:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome dello schema a cui cancellare la tabella associata:  "
 			echo ""
 			read VAR2
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "\dt $VAR2.*"
 			echo ""
-			echo -n "Scrivi il nome della tabella da cancellare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome della tabella da cancellare:  "
 			echo ""
 			read VAR3
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR1 -h $HOST -p $PORT -c "drop table $VAR2.$VAR3 cascade"
@@ -1158,27 +1170,27 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema: "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			echo ""
-			echo -n "Scegli la tabella da esportare: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella da esportare: "
 			echo ""
 			read VAR2
 			echo ""
-			echo -n "Scegli il nome del file in uscita: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il nome del file in uscita: "
 			echo ""
 			read VAR3
 			echo ""
-			echo -n "Scegli il delimitatore: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il delimitatore: "
 			echo ""
 			read VAR4
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c \
@@ -1201,19 +1213,19 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema: "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			echo ""
-			echo -n "Scegli la tabella da esportare: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella da esportare: "
 			echo ""
 			read VAR2
 				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
@@ -1238,25 +1250,25 @@ EOF
  			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
  			echo ""
- 			echo -n "Scegli il database: "
+ 			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
  			echo ""
  			read VAR0
  			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
  			echo ""
- 			echo -n "Scegli lo schema: "
+ 			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema: "
  			echo ""
  			read VAR1
  			clear
 			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
  			echo ""
- 			echo -n "Scegli la tabella a cui aggiungere la colonna: "
+ 			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella a cui aggiungere la colonna: "
  			echo ""
  			read VAR2
  			clear
  		 		Aggiungi_colonna
 			echo ""
- 		 	read -p "Vuoi ripetere l'operazione? (s/n) (default $SI): "
+ 		 	read -p "${grassetto}${txtverde}-->${normale} Vuoi ripetere l'operazione? (s/n) (default $SI): "
 				if [[ $REPLY ]]; then
 					SI=$REPLY
 				fi
@@ -1278,25 +1290,25 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema: "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			echo ""
-			echo -n "Scegli la tabella a cui cancellare la colonna: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella a cui cancellare la colonna: "
 			echo ""
 			read VAR2
 			clear
 				Cancella_colonna
 			echo ""
-			read -p "Vuoi ripetere l'operazione? (s/n) (default $SI): "
+			read -p "${grassetto}${txtverde}-->${normale} Vuoi ripetere l'operazione? (s/n) (default $SI): "
  				if [[ $REPLY ]]; then
  					SI=$REPLY
  				fi
@@ -1318,22 +1330,22 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
   		echo ""
-			echo -n "Scegli il database: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema: "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			echo ""
-			echo -n "Scegli lo tabella da dumpare: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo tabella da dumpare: "
 			echo ""
 			read VAR2
-			read -p "Vuoi dumpare solo i dati? (s/n) (default $SI): "
+			read -p "${grassetto}${txtverde}-->${normale} Vuoi dumpare solo i dati? (s/n) (default $SI): "
 			if [[ $REPLY ]]; then
 				SI=$REPLY
 			fi
@@ -1364,7 +1376,7 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
 			echo ""
 			read VAR0
 				#VAR1=`cat $PATH_RESTORE | awk 'NR==25 {print}' | awk -F'[ :;]' '{print $12}'`
@@ -1465,11 +1477,11 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
 			echo ""
-			echo -n "Scrivi il nome dell'utente da creare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome dell'utente da creare:  "
 			echo ""
 			read VAR
 			echo ""
-			echo -n "Scrivi la password per il superutente da creare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi la password per il superutente da creare:  "
 			echo ""
 			read -s VAR1
 			PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d postgres << EOF
@@ -1497,11 +1509,11 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
 			echo ""
-			echo -n "Scrivi il nome del superutente da creare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del superutente da creare:  "
 			echo ""
 			read VAR
 			echo ""
-			echo -n "Scrivi la password per il superutente da creare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi la password per il superutente da creare:  "
 			echo ""
 			read VAR1
 			PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
@@ -1528,7 +1540,7 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
 			echo ""
-			echo -n "Scrivi il nome dell'utente da cancellare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome dell'utente da cancellare:  "
 			echo ""
 			read VAR
 			PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
@@ -1539,7 +1551,7 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
 			echo ""
-			echo -n "Premi un tasto per tornare al menù principale... "
+			echo -n "${grassetto}${txtverde}-->${normale} Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
 				gpsql.sh
@@ -1557,17 +1569,17 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database: "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database: "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\du"
 			echo ""
-			echo -n "Scrivi il nome del gruppo:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del gruppo:  "
 			echo ""
 			read VAR1
 			echo ""
-			echo -n "Scrivi il nome dell'utente:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome dell'utente:  "
 			echo ""
 			read VAR2
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "grant $VAR1 to $VAR2"
@@ -1638,7 +1650,7 @@ case $choice in
 				variabili_HOST,PORT,USER,PASSWORD
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
       echo ""
-      echo -n "Scrivi il nome del gruppo da creare:  "
+      echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del gruppo da creare:  "
       echo ""
       read VAR
 	    	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "create group $VAR"
@@ -1661,7 +1673,7 @@ case $choice in
 				variabili_HOST,PORT,USER,PASSWORD
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
       echo ""
-      echo -n "Scrivi il nome del gruppo da cancellare:  "
+      echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del gruppo da cancellare:  "
       echo ""
       read VAR
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "drop group $VAR"
@@ -1684,11 +1696,6 @@ case $choice in
 esac
 ;;
 
-
-
-
-
-
 6)	clear
 		echo ""
 		echo -e "${txtsfoblu}Importa raster"
@@ -1700,12 +1707,12 @@ esac
 		echo ""
 			PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 		echo ""
-		echo -e "Scegli il database: "
+		echo -e "${grassetto}${txtverde}-->${normale} Scegli il database: "
 		read VAR0
 		clear
 			PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 		echo ""
-		echo -n "Scegli lo schema: "
+		echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema: "
 		echo ""
 		read VAR1
 		clear
@@ -1760,13 +1767,13 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Inserisci il database:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il database:  "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Inserisci o crea lo schema:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci o crea lo schema:  "
 			echo ""
 			read VAR1
 			clear
@@ -1803,23 +1810,23 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database:  "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema:  "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			echo ""
-			echo -n "Scegli la tabella da esportare:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella da esportare:  "
 			echo ""
 			read VAR2
 			echo ""
-			echo -n "Inserisci il nome del file *.shp in uscita:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome del file *.shp in uscita:  "
 			echo ""
 			read VAR3
 			sleep 1
@@ -1875,19 +1882,19 @@ case $choice in
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Scegli il database:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database:  "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Scegli lo schema:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema:  "
 			echo ""
 			read VAR1
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
 			echo ""
-			echo -n "Scegli la tabella:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella:  "
 			echo ""
 			read VAR2
 			clear
@@ -1917,13 +1924,13 @@ EOF
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -n "Inserisci il database:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il database:  "
 			echo ""
 			read VAR0
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
 			echo ""
-			echo -n "Inserisci o crea lo schema:  "
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci o crea lo schema:  "
 			echo ""
 			read VAR1
 			clear
@@ -1951,25 +1958,25 @@ EOF
 			echo ""
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
-			echo -e "Inserisci il nome del database:"
+			echo -e "${grassetto}${txtverde}-->${normale} Inserisci il nome del database:"
 			read DATABASE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\dn"
-			echo -e "Inserisci il nome dello schema:"
+			echo -e "${grassetto}${txtverde}-->${normale} Inserisci il nome dello schema:"
 			read SCHEMA
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
-			echo -e "Inserisci il nome del nuovo utente:"
+			echo -e "${grassetto}${txtverde}-->${normale} Inserisci il nome del nuovo utente:"
 			read NEW_USER
-			echo -e "Inserisci la password per il nuovo utente:"
+			echo -e "${grassetto}${txtverde}-->${normale} Inserisci la password per il nuovo utente:"
 			read NEW_PSW
 			clear
 			echo ""
-			echo -e "Scegli i permessi (SELECT,INSERT,UPDATE,DELETE):"
+			echo -e "${grassetto}${txtverde}-->${normale} Scegli i permessi (SELECT,INSERT,UPDATE,DELETE):"
 			read PRIVILEGI
 			clear
 			echo ""
-			echo -e "Vuoi (c)oncedere o (r)evocare i permessi?"
+			echo -e "${grassetto}${txtverde}-->${normale} Vuoi (c)oncedere o (r)evocare i permessi?"
 			read choice
 
 		case $choice in
@@ -1993,7 +2000,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_USER"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}concedendo ${txtverde}$PRIVILEGI ${normale}sulle tabelle a ${txtverde}$NEW_USER"
 					echo ""
-					echo -e "${normale}Premi un tasto per procedere..."
+					echo -e "${grassetto}${txtverde}-->${normale} Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_USER;
@@ -2048,9 +2055,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_USER"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}revocando ${txtverde}$PRIVILEGI ${normale}sulle tabelle da ${txtverde}$NEW_USER"
 					echo ""
-					echo -e "${normale}Procedo?"
-					echo ""
-					echo -e "Premi un tasto per procedere..."
+					echo -e "${grassetto}${txtverde}-->${normale} Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_USER;
@@ -2138,7 +2143,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_GRP"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}concedendo ${txtverde}$PRIVILEGI ${normale}sulle tabelle a ${txtverde}$NEW_GRP"
 					echo ""
-					echo -e "${normale}Premi un tasto per procedere..."
+					echo -e "${grassetto}${txtverde}-->${normale} Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_GRP;
@@ -2191,7 +2196,7 @@ EOF
 					echo -e " - ${txtverde}Concedi ${normale}la selezione su tutte le tabelle nello schema ${txtverde}PUBLIC ${normale}a ${txtverde}$NEW_GRP"
 					echo -e " - ${txtciano}Modifica ${normale}i privilegi predefiniti nello schema ${txtverde}$SCHEMA ${normale}revocando ${txtverde}$PRIVILEGI ${normale}sulle tabelle da ${txtverde}$NEW_GRP"
 					echo ""
-					echo -e "Premi un tasto per procedere..."
+					echo -e "${grassetto}${txtverde}-->${normale} Premi un tasto per procedere..."
 					read
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $DATABASE << EOF
 							CREATE ROLE $NEW_GRP;

@@ -852,7 +852,6 @@ EOF
 	4)  clear
 			echo ""
 			echo -e "${txtsfoblu}Crea tabella da *.csv"
-			echo ""
 			echo -e "${normale}Questo tool permette di generare una tabella a partire da un file *.csv. Si può:"
 			echo ""
 			echo -e "1- ${grassetto}${txtverde}importare un file con geometria (Lat,Lon,Hei)${normale} il quale verrà generato nel database"
@@ -1249,6 +1248,7 @@ EOF
 			echo -e "${txtsfoblu}Restore tabella"
 			echo -e "${normale}Questo tool permette di fare un ripristino da un file in formato *.sql di una"
 			echo -e "tabella per la successiva importazione in un database"
+			echo ""
 				HOST,PORT,USER,PASSWORD,PATH_RESTORE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -1625,6 +1625,7 @@ case $choice in
 			echo -e "${txtsfoblu}Import shapefile"
 			echo -e "${normale}Questo tool permette di creare una tabella per mezzo del comando shp2psql e di"
 			echo -e "importarla in un database"
+			echo ""
 				HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -1778,6 +1779,7 @@ EOF
 			echo ""
 			echo -e "${txtsfoblu}Privilegi a vista"
 			echo -e "${normale}Questo tool permette di conoscere i privilegi dei vari utenti su una vista"
+			echo ""
 				HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"

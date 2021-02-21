@@ -68,12 +68,12 @@ HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
+		echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
 		read -s
 		if [[ $REPLY ]]; then
 			PASSWORD=$REPLY
 		fi
-		echo ""
+		echo "    "
 
     read -p "${grassetto}${txtverde}-->${normale} Imposta EPSG di partenza (default $EPSG1): "
 		if [[ $REPLY ]]; then
@@ -122,12 +122,12 @@ HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
+		echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
-		echo ""
+		echo "    "
 
 		echo ""
 		read -p "${grassetto}${txtverde}-->${normale} Imposta EPSG (default $EPSG): "
@@ -164,12 +164,12 @@ HOST,PORT,USER,PASSWORD,PATH_DIR () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
+		echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
-		echo ""
+		echo "    "
 
 		echo ""
     read -p "${grassetto}${txtverde}-->${normale} Imposta il path della directory: (default $PATH_DIR): "
@@ -201,12 +201,12 @@ HOST,PORT,USER,PASSWORD,PATH_FILE () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
+		echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
-		echo ""
+		echo "    "
 
     read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
@@ -237,12 +237,12 @@ HOST,PORT,USER,PASSWORD,PATH_DUMP () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
+		echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
-		echo ""
+		echo "    "
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta il path di destinazione (default $PATH_DUMP): "
 		if [[ $REPLY ]]; then
@@ -273,12 +273,12 @@ HOST,PORT,USER,PASSWORD,PATH_RESTORE () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
+		echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
 		read -s
 		if [[ $REPLY ]]; then
 			PASSWORD=$REPLY
 		fi
-		echo ""
+		echo "    "
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta il path con il file di partenza (default $PATH_RESTORE): "
 		if [[ $REPLY ]]; then
@@ -309,13 +309,12 @@ HOST,PORT,USER,PASSWORD () {
 		fi
 		echo "    ${grassetto}${txtverde}$USER${normale}"
 
-    echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD: "
+    echo -n "${grassetto}${txtverde}-->${normale} Imposta PASSWORD: "
     read -s
     if [[ $REPLY ]]; then
       PASSWORD=$REPLY
     fi
 		echo ""
-
 }
 
 #########################################################################################

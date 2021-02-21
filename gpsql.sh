@@ -771,6 +771,7 @@ case $choice in
 			echo ""
 			echo -e "${txtsfoblu}Crea tabella"
 			echo -e "${normale}Questo tool permette di generare una tabella veloce inserendo a mano i campi"
+			echo ""
 				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"

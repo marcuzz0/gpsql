@@ -46,7 +46,7 @@ txtsfobianco=$(tput setab 7)  # sfondo carattere bianco
 #########################################################################################
 # FUNZIONI DI CONNESSIONE
 #########################################################################################
-function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
+HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE () {
 
 		# echo `date`
 		# echo ""
@@ -54,19 +54,19 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
 		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
 		read -s
@@ -79,29 +79,28 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE {
 		if [[ $REPLY ]]; then
 			EPSG1=$REPLY
 		fi
-		echo $EPSG1
+		echo "    ${grassetto}${txtverde}$EPSG1${normale}"
 
     read -p "${grassetto}${txtverde}-->${normale} Imposta EPSG di destinazione (default $EPSG2): "
 		if [[ $REPLY ]]; then
 			EPSG2=$REPLY
 		fi
-		echo $EPSG2
+		echo "    ${grassetto}${txtverde}$EPSG2${normale}"
 
     read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
-		echo $PATH_FILE
+		echo "    ${grassetto}${txtverde}$PATH_FILE${normale}"
 
     read -p "${grassetto}${txtverde}-->${normale} Imposta il nome della tabella di destinazione (default $NEW_TABLE): "
 		if [[ $REPLY ]]; then
 			NEW_TABLE=$REPLY
 		fi
-		echo $NEW_TABLE
+		echo "    ${grassetto}${txtverde}$NEW_TABLE${normale}"
 
 }
-
-function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
+HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE () {
 
 		# echo `date`
 		# echo ""
@@ -109,111 +108,19 @@ function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA,PATH_FILE {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
-
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
-    read -s
-    if [[ $REPLY ]]; then
-      PASSWORD=$REPLY
-    fi
-		echo ""
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta DATABASE (default $DATABASE): "
-		if [[ $REPLY ]]; then
-			DATABASE=$REPLY
-		fi
-		echo $DATABASE
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta SCHEMA (default $SCHEMA): "
-		if [[ $REPLY ]]; then
-			SCHEMA=$REPLY
-		fi
-		echo $SCHEMA
-
-    read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
-		if [[ $REPLY ]]; then
-			PATH_FILE=$REPLY
-		fi
-		echo $PATH_FILE
-
-}
-
-function variabili_HOST,PORT,USER,PASSWORD,DATABASE,SCHEMA {
-
-		# echo `date`
-		# echo ""
-		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
-		if [[ $REPLY ]]; then
-			HOST=$REPLY
-		fi
-		echo $HOST
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
-		if [[ $REPLY ]]; then
-			PORT=$REPLY
-		fi
-		echo $PORT
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
-		if [[ $REPLY ]]; then
-			USER=$REPLY
-		fi
-		echo $USER
-
-		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
-    read -s
-    if [[ $REPLY ]]; then
-      PASSWORD=$REPLY
-    fi
-		echo ""
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta DATABASE (default $DATABASE): "
-		if [[ $REPLY ]]; then
-			DATABASE=$REPLY
-		fi
-		echo $DATABASE
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta SCHEMA (default $SCHEMA): "
-		if [[ $REPLY ]]; then
-			SCHEMA=$REPLY
-		fi
-		echo $SCHEMA
-
-}
-
-function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
-
-		# echo `date`
-		# echo ""
-		read -p "${grassetto}${txtverde}-->${normale} Imposta HOST (default $HOST): "
-		if [[ $REPLY ]]; then
-			HOST=$REPLY
-		fi
-		echo $HOST
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
-		if [[ $REPLY ]]; then
-			PORT=$REPLY
-		fi
-		echo $PORT
-
-		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
-		if [[ $REPLY ]]; then
-			USER=$REPLY
-		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
 		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
@@ -227,16 +134,15 @@ function variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE {
 		if [[ $REPLY ]]; then
 			EPSG=$REPLY
 		fi
-		echo $EPSG
+		echo "    ${grassetto}${txtverde}$EPSG${normale}"
 
     read -p "${grassetto}${txtverde}-->${normale} Imposta il path e nome del file (default $PATH_FILE): "
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
-		echo $PATH_FILE
+		echo "    ${grassetto}${txtverde}$PATH_FILE${normale}"
 }
-
-function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
+HOST,PORT,USER,PASSWORD,PATH_DIR () {
 
 		# echo `date`
 		# echo ""
@@ -244,19 +150,19 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
 		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
@@ -270,11 +176,10 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DIR {
 		if [[ $REPLY ]]; then
 			PATH_DIR=$REPLY
 		fi
-		echo $PATH_DIR
+		echo "    ${grassetto}${txtverde}$PATH_DIR${normale}"
 
 }
-
-function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
+HOST,PORT,USER,PASSWORD,PATH_FILE () {
 
 		# echo `date`
 		# echo ""
@@ -282,19 +187,19 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
 		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
@@ -307,11 +212,10 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_FILE {
 		if [[ $REPLY ]]; then
 			PATH_FILE=$REPLY
 		fi
-		echo $PATH_FILE
+		echo "    ${grassetto}${txtverde}$PATH_FILE${normale}"
 
 }
-
-function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
+HOST,PORT,USER,PASSWORD,PATH_DUMP () {
 
 		# echo `date`
 		# echo ""
@@ -319,19 +223,19 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
 		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
     read -s
@@ -344,11 +248,10 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP {
 		if [[ $REPLY ]]; then
 			PATH_DUMP=$REPLY
 		fi
-		echo $PATH_DUMP
+		echo "    ${grassetto}${txtverde}$PATH_DUMP${normale}"
 
 }
-
-function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
+HOST,PORT,USER,PASSWORD,PATH_RESTORE () {
 
 		# echo `date`
 		# echo ""
@@ -356,19 +259,19 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
 		echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD : "
 		read -s
@@ -381,11 +284,10 @@ function variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE {
 		if [[ $REPLY ]]; then
 			PATH_RESTORE=$REPLY
 		fi
-		echo $PATH_RESTORE
+		echo "    ${grassetto}${txtverde}$PATH_RESTORE${normale}"
 
 }
-
-function variabili_HOST,PORT,USER,PASSWORD {
+HOST,PORT,USER,PASSWORD () {
 
 		# echo `date`
 		# echo ""
@@ -393,19 +295,19 @@ function variabili_HOST,PORT,USER,PASSWORD {
 		if [[ $REPLY ]]; then
 			HOST=$REPLY
 		fi
-		echo $HOST
+		echo "    ${grassetto}${txtverde}$HOST${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta PORT (default $PORT): "
 		if [[ $REPLY ]]; then
 			PORT=$REPLY
 		fi
-		echo $PORT
+		echo "    ${grassetto}${txtverde}$PORT${normale}"
 
 		read -p "${grassetto}${txtverde}-->${normale} Imposta USER (default $USER): "
 		if [[ $REPLY ]]; then
 			USER=$REPLY
 		fi
-		echo $USER
+		echo "    ${grassetto}${txtverde}$USER${normale}"
 
     echo -E "${grassetto}${txtverde}-->${normale} Imposta PASSWORD: "
     read -s
@@ -419,7 +321,7 @@ function variabili_HOST,PORT,USER,PASSWORD {
 #########################################################################################
 # FUNZIONI DI DIALOGO RICORSIVE
 #########################################################################################
-function Aggiungi_colonna {
+Aggiungi_colonna () {
 
 				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 			echo ""
@@ -441,8 +343,7 @@ function Aggiungi_colonna {
 						 gpsql.sh
 					 fi
 }
-
-function Cancella_colonna {
+Cancella_colonna () {
 
 				PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 			echo ""
@@ -531,7 +432,7 @@ case $choice in
 			echo -e "${txtsfoblu}Lista dei database"
 			echo -e "${normale}Questo tool permette di visionare la lista dei database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -539,7 +440,6 @@ case $choice in
       echo ""
       read
       	gpsql.sh
-			exit
 			;;
 
 	2)	clear
@@ -547,7 +447,7 @@ case $choice in
 			echo -e "${txtsfoblu}Crea database"
 			echo -e "${normale}Questo tool permette di creare un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
      		PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
       echo ""
@@ -578,7 +478,6 @@ case $choice in
       echo ""
       read
       	gpsql.sh
-      exit
       ;;
 
 	3)	clear
@@ -586,7 +485,7 @@ case $choice in
 			echo -e "${txtsfoblu}Cancella database"
 			echo -e "${normale}Questo tool permette di cancellare un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
       clear
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
       echo ""
@@ -608,7 +507,6 @@ EOF
       echo ""
       read
       	gpsql.sh
-      exit
       ;;
 
   4)	clear
@@ -616,7 +514,7 @@ EOF
 			echo -e "${txtsfoblu}Dump database"
 			echo -e "${normale}Questo tool permette di eseguire un backup del database scelto"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP
+				HOST,PORT,USER,PASSWORD,PATH_DUMP
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -629,7 +527,6 @@ EOF
 		  echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
   5)  clear
@@ -637,7 +534,7 @@ EOF
 	 		echo -e "${txtsfoblu}Restore database"
 	 		echo -e "${normale}Questo tool permette di ripristinare un backup a partire da un file"
 			echo ""
-		 		variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE
+		 		HOST,PORT,USER,PASSWORD,PATH_RESTORE
 		  clear
 		 		PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 		 	echo ""
@@ -654,7 +551,6 @@ EOF
 	 	 	echo ""
 			read
 			 	gpsql.sh
-			exit
 			;;
 
   6)  clear
@@ -662,7 +558,7 @@ EOF
 			echo -e "${txtsfoblu}Lista estensioni"
 			echo -e "${normale}Questo tool permette di verificare le estensioni presenti in un database"
 			echo ""
-			 	variabili_HOST,PORT,USER,PASSWORD
+			 	HOST,PORT,USER,PASSWORD
 			clear
 			  PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -677,11 +573,9 @@ EOF
 			echo ""
 			read
 	  		gpsql.sh
-			exit
 			;;
 
 	7)  	gpsql.sh
-			exit
 			;;
 esac
 ;;
@@ -717,7 +611,7 @@ case $choice in
 			echo -e "${txtsfoblu}Lista degli schemi"
 			echo -e "${normale}Questo tool permette di visionare la lista degli schemi presenti in un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -731,7 +625,6 @@ case $choice in
       echo ""
 			read
         gpsql.sh
-			exit
       ;;
 
   2) 	clear
@@ -739,7 +632,7 @@ case $choice in
 			echo -e "${txtsfoblu}Crea schema"
 			echo -e "${normale}Questo tool permette di creare uno schema presente in un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
   		echo ""
@@ -761,7 +654,6 @@ case $choice in
 			echo ""
 			read
 				gpsql.sh
-      exit
       ;;
 
 	3)  clear
@@ -769,7 +661,7 @@ case $choice in
 			echo -e "${txtsfoblu}Cancella schema"
 			echo -e "${normale}Questo tool permette di cancellare uno schema presente in un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -791,11 +683,9 @@ case $choice in
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	4)   gpsql.sh
-			exit
 			;;
 esac
 ;;
@@ -840,7 +730,7 @@ case $choice in
 			echo -e "${normale}Questo tool permette di visionare la lista di tutte le tabelle presenti in un"
 			echo -e "database di uno specifico schema"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -875,14 +765,13 @@ case $choice in
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	2)  clear
 			echo ""
 			echo -e "${txtsfoblu}Crea tabella"
 			echo -e "${normale}Questo tool permette di generare una tabella veloce inserendo a mano i campi"
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -921,7 +810,6 @@ case $choice in
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	3)	clear
@@ -929,7 +817,7 @@ case $choice in
 			echo -e "${txtsfoblu}Crea tabella da *.sql"
 			echo -e "${normale}Questo tool permette di generare una tabella a partire da un file *.sql"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
+				HOST,PORT,USER,PASSWORD,PATH_FILE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -959,7 +847,6 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	4)  clear
@@ -987,7 +874,7 @@ EOF
 					echo ""
 					echo -e "${txtsfoblu}Crea tabella da *.csv con geometria (Lat,Lon,Hei)${normale}"
 					echo ""
-						variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
+						HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
 					clear
 					PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
@@ -1028,14 +915,13 @@ EOF
 					echo ""
 					read
 						gpsql.sh
-					exit
 					;;
 
 			2)	clear
 					echo ""
 					echo -e "${txtsfoblu}Crea tabella da *.csv con geometria ${normale}"
 					echo ""
-						variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
+						HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
@@ -1073,14 +959,13 @@ EOF
 					echo ""
 					read
 						gpsql.sh
-					exit
 					;;
 
 			3)	clear
 					echo ""
 					echo -e "${txtsfoblu}Crea tabella da *.csv senza geometria${normale}"
 					echo ""
-						variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
+						HOST,PORT,USER,PASSWORD,PATH_FILE
 					clear
 						PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 					echo ""
@@ -1116,11 +1001,9 @@ EOF
 					echo ""
 					read
 						gpsql.sh
-					exit
 					;;
 
      *)   	gpsql.sh
-					exit
 					;;
 					esac
 					;;
@@ -1132,7 +1015,7 @@ EOF
 			echo -e "${normale}Questo tool permette di cancellare una tabella presente in un"
 			echo -e "database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1157,7 +1040,6 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
  6)  	clear
@@ -1166,7 +1048,7 @@ EOF
 			echo -e "${normale}Questo tool permette di esportare una tabella in formato *.csv presente in un"
 			echo -e "database con la scelta del delimitatore"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD,PATH_DIR
+				HOST,PORT,USER,PASSWORD,PATH_DIR
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1200,7 +1082,6 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
  7)  	clear
@@ -1209,7 +1090,7 @@ EOF
 			echo -e "${normale}Questo tool permette di esportare la query dei campi di una tabella in"
 			echo -e "formato *.txt presente in un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD,PATH_FILE
+				HOST,PORT,USER,PASSWORD,PATH_FILE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1237,7 +1118,6 @@ EOF
 			echo ""
 			read
 			gpsql.sh
-			exit
 			;;
 
  8)  	clear
@@ -1246,7 +1126,7 @@ EOF
  			echo -e "${normale}Questo tool permette di creare una nuova colonna in una tabella presente in un"
  			echo -e "database. Attualmente viene assocciato in automatico alla colonna una stringa di tipo testo."
  			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
  			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
  			echo ""
@@ -1278,7 +1158,6 @@ EOF
 					else
 						gpsql.sh
 				fi
-	   	exit
 		 	;;
 
 	9)  clear
@@ -1286,7 +1165,7 @@ EOF
 			echo -e "${txtsfoblu}Cancella colonna"
 			echo -e "${normale}Questo tool permette di cancellare una colonna presente in una tabella"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1318,7 +1197,6 @@ EOF
  				else
  						gpsql.sh
  				fi
-			exit
 			;;
 
  10)  clear
@@ -1326,7 +1204,7 @@ EOF
 			echo -e "${txtsfoblu}Dump tabella"
 			echo -e "${normale}Questo tool permette di fare un backup di una tabella in formato *.sql"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD,PATH_DUMP
+				HOST,PORT,USER,PASSWORD,PATH_DUMP
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
   		echo ""
@@ -1364,7 +1242,6 @@ EOF
 		  echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	11)	clear
@@ -1372,7 +1249,7 @@ EOF
 			echo -e "${txtsfoblu}Restore tabella"
 			echo -e "${normale}Questo tool permette di fare un ripristino da un file in formato *.sql di una"
 			echo -e "tabella per la successiva importazione in un database"
-				variabili_HOST,PORT,USER,PASSWORD,PATH_RESTORE
+				HOST,PORT,USER,PASSWORD,PATH_RESTORE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1414,11 +1291,9 @@ EOF
 			echo ""
 			read
 	 			gpsql.sh
-			exit
 			;;
 
 	12)		gpsql.sh
-			exit
 			;;
 esac
 ;;
@@ -1459,13 +1334,12 @@ case $choice in
 			echo ""
 				variabili_HOST,PORT,USER,PASSWORD
 			clear
-				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
 			echo ""
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	2)	clear
@@ -1473,7 +1347,7 @@ case $choice in
 			echo -e "${txtsfoblu}Crea utente"
 			echo -e "${normale}Questo tool permette di creare un utente semplice con nome utente e password"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
 			echo ""
@@ -1496,7 +1370,6 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	3)	clear
@@ -1505,7 +1378,7 @@ EOF
 			echo -e "${normale}Questo tool permette di creare un superutente con nome utente, password e"
 			echo -e "con la possibilità di creare database e ruoli"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
 			echo ""
@@ -1528,7 +1401,6 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	4)	clear
@@ -1536,7 +1408,7 @@ EOF
 			echo -e "${txtsfoblu}Cancella utente"
 			echo -e "${normale}Questo tool permette di cancellare un utente presente in un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d $DATABASE -h $HOST -p $PORT -c "\du"
 			echo ""
@@ -1555,7 +1427,6 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 
@@ -1565,7 +1436,7 @@ EOF
 			echo -e "${normale}Questo tool permette di associare un utente ad un gruppo presente in un"
 			echo -e "database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1591,11 +1462,9 @@ EOF
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
 	6)		gpsql.sh
-      exit
       ;;
 esac
 ;;
@@ -1632,14 +1501,13 @@ case $choice in
 			echo -e "${normale}Questo tool permette di visionare la lista di tutti i gruppi presenti in un"
 			echo -e "database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
       echo ""
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
       read
         gpsql.sh
-      exit
 		  ;;
 
 	2)  clear
@@ -1647,7 +1515,7 @@ case $choice in
 			echo -e "${txtsfoblu}Crea gruppo"
 			echo -e "${normale}Questo tool permette di creare un gruppo"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
       echo ""
       echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del gruppo da creare:  "
@@ -1662,7 +1530,6 @@ case $choice in
       echo ""
       read
       	gpsql.sh
-      exit
 			;;
 
 	3)	clear
@@ -1670,7 +1537,7 @@ case $choice in
 			echo -e "${txtsfoblu}Cancella gruppo"
 			echo -e "${normale}Questo tool permette di cancellare un gruppo presente in un database"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
       	PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\du"
       echo ""
       echo -n "${grassetto}${txtverde}-->${normale} Scrivi il nome del gruppo da cancellare:  "
@@ -1685,13 +1552,9 @@ case $choice in
 			echo ""
 			read
 				gpsql.sh
-			exit
 			;;
 
-
-
  	4)  	gpsql.sh
-      exit
       ;;
 esac
 ;;
@@ -1702,7 +1565,7 @@ esac
 		echo -e "${normale}Questo tool permette di importare un file raster (*.tif) all'interno di in un"
 		echo -e "database di uno specifico schema"
 		echo ""
-			variabili_HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
+			HOST,PORT,USER,PASSWORD,EPSG,PATH_FILE
 		clear
 		echo ""
 			PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -1730,7 +1593,6 @@ esac
     echo ""
     read
       gpsql.sh
-		exit
 		;;
 
 7)	clear
@@ -1763,7 +1625,7 @@ case $choice in
 			echo -e "${txtsfoblu}Import shapefile"
 			echo -e "${normale}Questo tool permette di creare una tabella per mezzo del comando shp2psql e di"
 			echo -e "importarla in un database"
-				variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
+				HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1796,8 +1658,7 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-			gpsql.sh
-			exit
+				gpsql.sh
 			;;
 
   2)  clear
@@ -1806,7 +1667,7 @@ case $choice in
 			echo -e "${normale}Questo tool permette di esportare in formato *.shp una tabella presente "
 			echo -e "in un database specificandone il nome in uscita"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD,PATH_DIR
+				HOST,PORT,USER,PASSWORD,PATH_DIR
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1836,12 +1697,10 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-			gpsql.sh
-			exit
+				gpsql.sh
 			;;
 
   3)  	gpsql.sh
-			exit
 			;;
 esac
 ;;
@@ -1878,7 +1737,7 @@ case $choice in
 			echo -e "${txtsfoblu}Privilegi a tabella"
 			echo -e "${normale}Questo tool permette di conoscere i privilegi dei vari utenti su una tabella"
 			echo -e ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1912,15 +1771,14 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-			gpsql.sh
-			exit
+				gpsql.sh
 			;;
 
  2)   clear
 			echo ""
 			echo -e "${txtsfoblu}Privilegi a vista"
 			echo -e "${normale}Questo tool permette di conoscere i privilegi dei vari utenti su una vista"
-				variabili_HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
+				HOST,PORT,USER,PASSWORD,EPSG1,EPSG2,PATH_FILE,NEW_TABLE
 			clear
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
 			echo ""
@@ -1943,8 +1801,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-			gpsql.sh
-			exit
+				gpsql.sh
 			;;
 
 	3)	clear
@@ -1953,7 +1810,7 @@ EOF
 			echo -e "${normale}Questo tool permette associare ad un utente dei permessi o privilegi di "
 			echo -e "SELECT,INSERT,UPDATE,DELETE"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 			echo ""
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -2032,7 +1889,6 @@ EOF
 		      echo ""
 		      read
 		        gpsql.sh
-					exit
 					;;
 
 
@@ -2087,7 +1943,6 @@ EOF
 					echo ""
 					read
 						gpsql.sh
-					exit
 					;;
 		esac
 		;;
@@ -2098,7 +1953,7 @@ EOF
 			echo -e "${normale}Questo tool permette associare ad un gruppo dei permessi o privilegi di "
 			echo -e "SELECT,INSERT,UPDATE,DELETE"
 			echo ""
-				variabili_HOST,PORT,USER,PASSWORD
+				HOST,PORT,USER,PASSWORD
 			clear
 			echo ""
 				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
@@ -2174,7 +2029,6 @@ EOF
 	    		echo ""
 	    		read
 	    			gpsql.sh
-					exit
 					;;
 
 			r)	clear
@@ -2227,13 +2081,11 @@ EOF
 					echo ""
 					read
 						gpsql.sh
-					exit
 					;;
 		esac
 		;;
 
   5)		gpsql.sh
-			exit
 			;;
 
 esac
@@ -2244,7 +2096,6 @@ esac
     	# echo "Ciao a presto...  "
     	# echo ""
     	#sleep 1
-    	exit
     	;;
 
 

@@ -2098,7 +2098,7 @@ esac
 
  9)		clear
     	# echo ""
-    	# echo "Ciao a presto...  "
+    	# echo "Ciao alla prossima...  "
     	# echo ""
     	#sleep 1
     	;;

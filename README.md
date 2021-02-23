@@ -51,4 +51,3 @@ $ echo 'export PATH="$PATH:$HOME/bin/gpsql"' >> .bashrc
 $ cd gpsql
 $ gpsql.sh
 ```
-# gpsql

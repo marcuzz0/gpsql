@@ -1,6 +1,5 @@
 # gpsql
 ## Premessa
-Questo script permette la gestione di database Postgresql in ambiente shell includendo una svariata serie di comandi psql.
 Questo script permette la gestione di database Postgresql in ambiente shell includendo una svariata serie di comandi in psql.
 Di seguito vengono riportati i passaggi per l'installazione delle dipendenze necessarie al corretto funzionamento dello script.
 E' tuttavia necessario aver già in precedenza installato e configurato Postgresql sul sistema operativo.

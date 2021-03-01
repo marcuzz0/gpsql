@@ -16,9 +16,6 @@ $ sudo apt-get install l dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_linux_amd64
 $ chmod +x pgfutter
 $ echo "export PATH="$PATH:$HOME/bin/gpsql"" >> .bashrc
-$ cd gpsql
-$ gpsql.sh
-$ ./gpsql
 ```
 
 ## Installazione per Mac OSX
@@ -30,9 +27,6 @@ $ brew install dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_darwin_amd64
 $ chmod +x pgfutter
 $ echo 'export PATH="$PATH:$HOME/bin/gpsql"' >> .bashrc
-$ cd gpsql
-$ gpsql.sh
-$ gpsql
 ````
 
 ## Installazione per Windows 10
@@ -45,6 +39,4 @@ $ sudo apt-get install -y dialog
 $ wget -O pgfutter https://github.com/lukasmartinelli/pgfutter/releases/download/v1.2/pgfutter_linux_amd64
 $ chmod +x pgfutter
 $ echo 'export PATH="$PATH:$HOME/bin/gpsql"' >> .bashrc
-$ cd gpsql
-$ gpsql.sh
 ```

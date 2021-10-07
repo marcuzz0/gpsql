@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# versione 	1.0  
+# versione 	1.0
 # data 		31/01/2021
 # autore	MSeverin
 #
@@ -8,10 +8,12 @@
 # VARIABILI DI CONNESSIONE
 #########################################################################################
 BTITLE="GESTIONE PSQL 1.0 by MSeverin"
-HOST="localhost"
+# HOST="localhost"
+HOST="167.86.112.113"
 PORT="5432"
 USER="admin"
-DATABASE="test"
+# DATABASE="test"
+DATABASE="demo"
 SCHEMA="test"
 EPSG="4326"
 EPSG1="4326"
@@ -342,7 +344,7 @@ Aggiungi_colonna () {
 					 if [ $SI = "s" ]; then
 						 PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 					 else
-						 gpsql.sh
+						 gpsql
 					 fi
 }
 Cancella_colonna () {
@@ -364,14 +366,14 @@ Cancella_colonna () {
 					 if [ $SI = "s" ]; then
 						 PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 					 else
-						 gpsql.sh
+						 gpsql
 					 fi
 			}
 
 #########################################################################################
 clear
 
-HEIGHT=17
+HEIGHT=18
 WIDTH=35
 CHOICE_HEIGHT=17
 BACKTITLE="$BTITLE"
@@ -387,8 +389,9 @@ OPTIONS=(
 5 "Gestione gruppi"
 6 "Gestione raster"
 7 "Gestione shapefile"
-8 "Gestione privilegi"
-9 "Esci")
+8 "Gestione geopakage"
+9 "Gestione privilegi"
+10 "Esci")
 
 choice=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -441,7 +444,7 @@ case $choice in
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
       read
-      	gpsql.sh
+      	gpsql
 			;;
 
 	2)	clear
@@ -470,7 +473,7 @@ case $choice in
 				echo -n "Scelta invalida... "
 			echo ""
 			sleep 1
-				gpsql.sh
+				gpsql
 				fi
       sleep 1
       clear
@@ -479,7 +482,7 @@ case $choice in
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
       read
-      	gpsql.sh
+      	gpsql
       ;;
 
 	3)	clear
@@ -508,7 +511,7 @@ EOF
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
       read
-      	gpsql.sh
+      	gpsql
       ;;
 
   4)	clear
@@ -528,7 +531,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 		  echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
   5)  clear
@@ -552,7 +555,7 @@ EOF
 		 	echo -n "Premi un tasto per tornare al menù principale... "
 	 	 	echo ""
 			read
-			 	gpsql.sh
+			 	gpsql
 			;;
 
   6)  clear
@@ -574,10 +577,10 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-	  		gpsql.sh
+	  		gpsql
 			;;
 
-	7)  	gpsql.sh
+	7)  	gpsql
 			;;
 esac
 ;;
@@ -626,7 +629,7 @@ case $choice in
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
 			read
-        gpsql.sh
+        gpsql
       ;;
 
   2) 	clear
@@ -655,7 +658,7 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
       ;;
 
 	3)  clear
@@ -684,10 +687,10 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
-	4)   gpsql.sh
+	4)   gpsql
 			;;
 esac
 ;;
@@ -760,13 +763,13 @@ case $choice in
 						clear
 					  PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 -c "SELECT * from $VAR1.$VAR2"
 					else
-						gpsql.sh
+						gpsql
 					fi
 			echo ""
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	2)  clear
@@ -812,7 +815,7 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	3)	clear
@@ -849,7 +852,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	4)  clear
@@ -916,7 +919,7 @@ EOF
 					echo -n "Premi un tasto per tornare al menù principale... "
 					echo ""
 					read
-						gpsql.sh
+						gpsql
 					;;
 
 			2)	clear
@@ -948,7 +951,7 @@ EOF
 						./pgfutter --host $HOST --port $PORT --dbname $VAR0 --schema $VAR1 --table $VAR2 --user $USER --pw $PASSWORD csv $PATH_FILE
 					sleep 1
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
-							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id integer SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id SERIAL PRIMARY KEY;
 							ALTER TABLE $VAR1.$VAR2 ALTER COLUMN id type integer USING (id::integer);
 							ALTER TABLE $VAR1.$VAR2 ADD COLUMN geom geometry(Point,$EPSG);
 							UPDATE $VAR1.$VAR2 SET geom=ST_SetSRID(ST_MakePoint(lon::double precision,lat::double precision),$EPSG);
@@ -960,7 +963,7 @@ EOF
 					echo -n "Premi un tasto per tornare al menù principale... "
 					echo ""
 					read
-						gpsql.sh
+						gpsql
 					;;
 
 			3)	clear
@@ -992,7 +995,7 @@ EOF
 					./pgfutter --host $HOST --port $PORT --dbname $VAR0 --schema $VAR1 --table $VAR2 --user $USER --pw $PASSWORD csv $PATH_FILE
 					sleep 1
 						PGPASSWORD="$PASSWORD" psql -U $USER -h $HOST -p $PORT -d $VAR0 << EOF
-							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id integer SERIAL PRIMARY KEY;
+							ALTER TABLE $VAR1.$VAR2 ADD COLUMN id SERIAL PRIMARY KEY;
 							ALTER TABLE $VAR1.$VAR2 ALTER COLUMN id type integer USING (id::integer);
 EOF
 					sleep 2
@@ -1002,10 +1005,10 @@ EOF
 					echo -n "Premi un tasto per tornare al menù principale... "
 					echo ""
 					read
-						gpsql.sh
+						gpsql
 					;;
 
-     *)   	gpsql.sh
+     *)   	gpsql
 					;;
 					esac
 					;;
@@ -1041,7 +1044,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
  6)  	clear
@@ -1083,7 +1086,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
  7)  	clear
@@ -1119,7 +1122,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-			gpsql.sh
+			gpsql
 			;;
 
  8)  	clear
@@ -1158,7 +1161,7 @@ EOF
 					if [ $SI = "s" ]; then
 						Aggiungi_colonna
 					else
-						gpsql.sh
+						gpsql
 				fi
 		 	;;
 
@@ -1197,7 +1200,7 @@ EOF
  					if [ $SI = "s" ]; then
  						Cancella_colonna
  				else
- 						gpsql.sh
+ 						gpsql
  				fi
 			;;
 
@@ -1234,7 +1237,7 @@ EOF
 					  PGPASSWORD="$PASSWORD" pg_dump -U $USER -h $HOST -p $PORT -d $VAR0 --t $VAR1.$VAR2 \
 						--verbose --column-inserts --data-only > $PATH_DUMP/$VAR2.sql
 					elif [ $SI != "n" ]; then
-						gpsql.sh
+						gpsql
 					else
 						PGPASSWORD="$PASSWORD" pg_dump -U $USER -h $HOST -p $PORT -d $VAR0 --t $VAR1.$VAR2 \
 						--verbose --column-inserts > $PATH_DUMP/$VAR2.sql
@@ -1243,7 +1246,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 		  echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	11)	clear
@@ -1293,10 +1296,10 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-	 			gpsql.sh
+	 			gpsql
 			;;
 
-	12)		gpsql.sh
+	12)		gpsql
 			;;
 esac
 ;;
@@ -1342,7 +1345,7 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	2)	clear
@@ -1372,7 +1375,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	3)	clear
@@ -1403,7 +1406,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	4)	clear
@@ -1429,7 +1432,7 @@ EOF
 			echo -n "${grassetto}${txtverde}-->${normale} Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 
@@ -1464,10 +1467,10 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
-	6)		gpsql.sh
+	6)		gpsql
       ;;
 esac
 ;;
@@ -1510,7 +1513,7 @@ case $choice in
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
       read
-        gpsql.sh
+        gpsql
 		  ;;
 
 	2)  clear
@@ -1532,7 +1535,7 @@ case $choice in
       echo -n "Premi un tasto per tornare al menù principale... "
       echo ""
       read
-      	gpsql.sh
+      	gpsql
 			;;
 
 	3)	clear
@@ -1554,10 +1557,10 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
- 	4)  	gpsql.sh
+ 	4)  	gpsql
       ;;
 esac
 ;;
@@ -1595,7 +1598,7 @@ esac
     echo -n "Premi un tasto per tornare al menù principale... "
     echo ""
     read
-      gpsql.sh
+      gpsql
 		;;
 
 7)	clear
@@ -1662,7 +1665,7 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
   2)  clear
@@ -1701,15 +1704,130 @@ case $choice in
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
-  3)  	gpsql.sh
+  3)  	gpsql
 			;;
 esac
 ;;
 
 8)	clear
+
+HEIGHT=11
+WIDTH=35
+CHOICE_HEIGHT=11
+BACKTITLE="$BTITLE"
+TITLE="Gestione geopackage"
+MENU="Scegli un'opzione:"
+
+OPTIONS=(
+
+1 "Import geopackage"
+2 "Export geopackage"
+3 "Menù principale"
+)
+choice=$(dialog --clear \
+								--backtitle "$BACKTITLE" \
+								--title "$TITLE" \
+								--menu "$MENU" \
+								$HEIGHT $WIDTH $CHOICE_HEIGHT \
+           			"${OPTIONS[@]}" \
+           			2>&1 >/dev/tty)
+
+case $choice in
+
+	1)  clear
+			echo ""
+			echo -e "${txtsfoblu}Import geopackage"
+			echo -e "${normale}Questo tool permette di creare una tabella per mezzo del comando ogr2ogr e di"
+			echo -e "importarla in un database"
+			echo ""
+				HOST,PORT,USER,PASSWORD,PATH_FILE
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il database:  "
+			echo ""
+			read VAR0
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+			echo ""
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci o crea lo schema:  "
+			echo ""
+			read VAR1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "create schema $VAR1"
+			sleep 1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+			# echo ""
+			# echo -n "Inserisci il nome della tabella:  "
+			# echo ""
+			# read VAR2
+			# clear
+			# sleep 1
+				ogr2ogr -f PostgreSQL PG:"host=$HOST dbname=$VAR0 \
+					user=$USER password=$PASSWORD" $PATH_FILE -lco LAUNDER=NO
+				#shp2pgsql -I -s $EPSG1:$EPSG2 $PATH_FILE $VAR1.$NEW_TABLE | PGPASSWORD="$PASSWORD" psql -d $VAR0 -U $USER -h $HOST -p $PORT
+			#ogr2ogr -progress --config PG_USE_COPY YES -f PostgreSQL PG:" dbname='$VAR0' host=$HOST port=$PORT \
+			#user='$USER' password='$PASSWORD' active_schema=$VAR1 " -lco DIM=2 $PATH_FILE \
+			#$VAR2 -overwrite -nlt GEOMETRY -lco GEOMETRY_NAME=geom -lco FID=id -nln $VAR2.$VAR2 -t_srs EPSG:$EPSG1 -a_srs EPSG:$EPSG2 \
+			#-nlt PROMOTE_TO_MULTI
+			echo ""
+			echo -n "Premi un tasto per tornare al menù principale... "
+			echo ""
+			read
+				gpsql
+			;;
+
+  2)  clear
+			echo ""
+			echo -e "${txtsfoblu}Export geopackage"
+			echo -e "${normale}Questo tool permette di esportare in formato *.gpkg una tabella presente "
+			echo -e "in un database specificandone il nome in uscita"
+			echo ""
+				HOST,PORT,USER,PASSWORD,PATH_DIR
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d postgres -h $HOST -p $PORT -c "\l"
+			echo ""
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli il database:  "
+			echo ""
+			read VAR0
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dn"
+			echo ""
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli lo schema:  "
+			echo ""
+			read VAR1
+			clear
+				PGPASSWORD="$PASSWORD" psql -U $USER -d $VAR0 -h $HOST -p $PORT -c "\dt $VAR1.*"
+			echo ""
+			echo -n "${grassetto}${txtverde}-->${normale} Scegli la tabella da esportare:  "
+			echo ""
+			read VAR2
+			echo ""
+			echo -n "${grassetto}${txtverde}-->${normale} Inserisci il nome del file *.gpkg in uscita:  "
+			echo ""
+			read VAR3
+			sleep 1
+			clear
+			  ogr2ogr -f "GPKG" $PATH_DIR/"$VAR3.gpkg" -progress -overwrite -spat_srs 4326 PG:"host=$HOST dbname=$VAR0 \
+					user=$USER password=$PASSWORD" -nln $VAR3 -sql "SELECT * FROM $VAR1.$VAR2"
+				#pgsql2shp -f $PATH_DIR/$VAR3'.shp' -u $USER -h $HOST -p $PORT -P $PASSWORD $VAR0 $VAR1.$VAR2
+			echo ""
+			echo -n "Premi un tasto per tornare al menù principale... "
+			echo ""
+			read
+				gpsql
+			;;
+
+  3)  	gpsql
+			;;
+esac
+;;
+
+9)	clear
 
 HEIGHT=13
 WIDTH=35
@@ -1775,7 +1893,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
  2)   clear
@@ -1806,7 +1924,7 @@ EOF
 			echo -n "Premi un tasto per tornare al menù principale... "
 			echo ""
 			read
-				gpsql.sh
+				gpsql
 			;;
 
 	3)	clear
@@ -1893,7 +2011,7 @@ EOF
 		      echo -n "Premi un tasto per tornare al menù principale... "
 		      echo ""
 		      read
-		        gpsql.sh
+		        gpsql
 					;;
 
 
@@ -1947,7 +2065,7 @@ EOF
 		    	echo -n "Premi un tasto per tornare al menù principale... "
 					echo ""
 					read
-						gpsql.sh
+						gpsql
 					;;
 		esac
 		;;
@@ -2033,7 +2151,7 @@ EOF
 	    		echo -n "Premi un tasto per tornare al menù principale... "
 	    		echo ""
 	    		read
-	    			gpsql.sh
+	    			gpsql
 					;;
 
 			r)	clear
@@ -2085,18 +2203,18 @@ EOF
 	      	echo -n "Premi un tasto per tornare al menù principale... "
 					echo ""
 					read
-						gpsql.sh
+						gpsql
 					;;
 		esac
 		;;
 
-  5)		gpsql.sh
+  5)		gpsql
 			;;
 
 esac
 ;;
 
- 9)		clear
+10)		clear
     	# echo ""
     	# echo "Ciao alla prossima...  "
     	# echo ""

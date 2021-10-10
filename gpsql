@@ -1812,7 +1812,7 @@ case $choice in
 			read VAR3
 			sleep 1
 			clear
-			  ogr2ogr -f "GPKG" $PATH_DIR/"$VAR3.gpkg" -progress -overwrite -spat_srs 4326 PG:"host=$HOST dbname=$VAR0 \
+			  ogr2ogr -f "GPKG" $PATH_DIR/"$VAR3.gpkg" -progress -overwrite -spat_srs 4326 PG:"host=$HOST port=$PORT dbname=$VAR0 \
 					user=$USER password=$PASSWORD" -nln $VAR3 -sql "SELECT * FROM $VAR1.$VAR2"
 				#pgsql2shp -f $PATH_DIR/$VAR3'.shp' -u $USER -h $HOST -p $PORT -P $PASSWORD $VAR0 $VAR1.$VAR2
 			echo ""

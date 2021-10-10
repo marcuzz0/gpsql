@@ -389,7 +389,7 @@ OPTIONS=(
 5 "Gestione gruppi"
 6 "Gestione raster"
 7 "Gestione shapefile"
-8 "Gestione geopakage"
+8 "Gestione geopackage"
 9 "Gestione privilegi"
 10 "Esci")
 
